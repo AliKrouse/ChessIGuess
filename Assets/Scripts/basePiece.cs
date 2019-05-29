@@ -15,6 +15,8 @@ public class basePiece : MonoBehaviour
 
     public GameObject arrows;
 
+    public int movementValue;
+
 	void Start ()
     {
         allies.AddRange(GameObject.FindGameObjectsWithTag(this.tag));

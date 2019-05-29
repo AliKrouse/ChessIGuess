@@ -196,8 +196,6 @@ namespace InnerDriveStudios.DiceCreator
 
 			Gizmos.DrawCube(center, size);
 		}
-
-
-	}
+    }
 
 }

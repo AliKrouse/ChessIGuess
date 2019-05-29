@@ -20,6 +20,8 @@ public class directionArrows : MonoBehaviour
     {
         bp.direction = direction;
         dr.isActive = true;
+        dr.die = bp.die;
+        dr.currentPiece = bp;
         transform.parent.gameObject.SetActive(false);
     }
 }
