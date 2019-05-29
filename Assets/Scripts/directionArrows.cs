@@ -6,14 +6,20 @@ public class directionArrows : MonoBehaviour
 {
     public int direction;
     private basePiece bp;
+
+    private dieRoller dr;
     
 	void Start ()
     {
         bp = transform.parent.transform.parent.gameObject.GetComponent<basePiece>();
+
+        dr = FindObjectOfType<dieRoller>();
 	}
 
     private void OnMouseDown()
     {
         bp.direction = direction;
+        dr.isActive = true;
+        transform.parent.gameObject.SetActive(false);
     }
 }

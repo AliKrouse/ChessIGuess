@@ -8,6 +8,7 @@ TagManager:
   - White
   - Black
   - Arrow
+  - Roller
   layers:
   - Default
   - TransparentFX
