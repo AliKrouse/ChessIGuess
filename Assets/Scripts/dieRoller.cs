@@ -32,13 +32,13 @@ public class dieRoller : MonoBehaviour
     {
         if (isActive)
         {
-            transform.position = Vector3.MoveTowards(transform.position, activePoint, Time.deltaTime * speed);
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, activePoint, Time.deltaTime * speed);
             if (!rolled)
                 button.SetActive(true);
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, inactivePoint, Time.deltaTime * speed);
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, inactivePoint, Time.deltaTime * speed);
             if (Vector3.Distance(transform.position, inactivePoint) < float.Epsilon)
                 Destroy(d);
 
@@ -52,6 +52,7 @@ public class dieRoller : MonoBehaviour
         button.SetActive(false);
         Vector3 dir = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1));
         d = Instantiate(dice[die], button.transform.position, Random.rotation);
+        d.transform.rotation = Random.rotation;
         d.GetComponent<Rigidbody>().AddForce(dir * throwForce);
         StartCoroutine(CheckForDieSide());
     }
@@ -60,11 +61,9 @@ public class dieRoller : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         int value = d.GetComponent<DieSides>().GetDieSideMatchInfo().closestMatch.values[0];
-        Debug.Log(value);
         yield return new WaitForSeconds(2);
         isActive = false;
         yield return new WaitForSeconds(1);
-        currentPiece.SetMovement();
-        currentPiece.movementValue = value;
+        currentPiece.SetMovement(value + 1);
     }
 }

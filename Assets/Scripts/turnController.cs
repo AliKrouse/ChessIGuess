@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class turnController : MonoBehaviour
 {
-    public GameObject cameraBoom;
+    public camScript boom;
     public GameObject wTurn, bTurn;
     public GameObject[] wPieces, bPieces;
     public bool whiteTurn;
 
     private dieRoller dr;
+
+    public bool coroutineIsRunning;
     
 	void Start ()
     {
@@ -40,6 +42,8 @@ public class turnController : MonoBehaviour
 
                 wTurn.SetActive(true);
                 bTurn.SetActive(false);
+
+                boom.rot = 0;
             }
             if (!whiteTurn)
             {
@@ -50,7 +54,20 @@ public class turnController : MonoBehaviour
 
                 bTurn.SetActive(true);
                 wTurn.SetActive(false);
+
+                boom.rot = 180;
             }
         }
 	}
+
+    public IEnumerator SwitchTurns()
+    {
+        Debug.Log("switching");
+        coroutineIsRunning = true;
+        yield return new WaitForSeconds(1);
+
+        whiteTurn = !whiteTurn;
+
+        coroutineIsRunning = false;
+    }
 }

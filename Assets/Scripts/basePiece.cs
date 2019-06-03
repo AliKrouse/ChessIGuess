@@ -20,6 +20,8 @@ public class basePiece : MonoBehaviour
 
     public Transform targetTile;
 
+    private turnController tc;
+
 	void Start ()
     {
         allies.AddRange(GameObject.FindGameObjectsWithTag(this.tag));
@@ -46,6 +48,8 @@ public class basePiece : MonoBehaviour
             }
         }
         targetTile = tiles[closestIndex].transform;
+
+        tc = GameObject.FindGameObjectWithTag("GameController").GetComponent<turnController>();
 	}
 	
 	void Update ()
@@ -55,16 +59,11 @@ public class basePiece : MonoBehaviour
             Vector3 moveTo = new Vector3(targetTile.position.x, transform.position.y, targetTile.transform.position.z);
             float d = Vector3.Distance(transform.position, moveTo);
             if (d < float.Epsilon)
-                SetMovement();
+                SetMovement(movementValue);
 
             transform.position = Vector3.MoveTowards(transform.position, moveTo, Time.deltaTime * speed);
 
             Debug.DrawLine(transform.position, moveTo, Color.red);
-        }
-        else
-        {
-            if (GetComponent<Outline>() != null)
-                Destroy(GetComponent<Outline>());
         }
 	}
 
@@ -82,14 +81,31 @@ public class basePiece : MonoBehaviour
         }
     }
 
-    public void SetMovement()
+    public void SetMovement(int value)
     {
+        movementValue = value;
+
         if (dirs[direction].GetComponent<checkAvailability>().available)
         {
             targetTile = dirs[direction].GetComponent<checkAvailability>().NearestTile();
             movementValue--;
+
+            if (movementValue <= 0)
+            {
+                if (GetComponent<Outline>() != null)
+                    Destroy(GetComponent<Outline>());
+                if (!tc.coroutineIsRunning)
+                    tc.StartCoroutine(tc.SwitchTurns());
+            }
         }
         else
+        {
             movementValue = 0;
+
+            if (GetComponent<Outline>() != null)
+                Destroy(GetComponent<Outline>());
+            if (!tc.coroutineIsRunning)
+                tc.StartCoroutine(tc.SwitchTurns());
+        }
     }
 }

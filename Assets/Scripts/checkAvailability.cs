@@ -5,9 +5,9 @@ using UnityEngine;
 public class checkAvailability : MonoBehaviour
 {
     public string alliedTag, enemyTag;
-    private GameObject arrow;
+    protected GameObject arrow;
 
-    private bool touchingAlly, touchingEdge;
+    protected bool touchingAlly, touchingEdge, touchingEnemy;
     public bool available;
 
     private GameObject[] tiles;
@@ -19,7 +19,7 @@ public class checkAvailability : MonoBehaviour
         tiles = GameObject.FindGameObjectsWithTag("Tile");
 	}
 	
-	void Update ()
+	public virtual void Update ()
     {
         if (!touchingAlly && !touchingEdge)
             available = true;
