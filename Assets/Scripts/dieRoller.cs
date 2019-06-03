@@ -59,7 +59,11 @@ public class dieRoller : MonoBehaviour
     private IEnumerator CheckForDieSide()
     {
         yield return new WaitForSeconds(1);
-        Debug.Log(d.GetComponent<DieSides>().GetDieSideMatchInfo().closestMatch.values[0]);
-        currentPiece.movementValue = d.GetComponent<DieSides>().GetDieSideMatchInfo().closestMatch.values[0];
+        int value = d.GetComponent<DieSides>().GetDieSideMatchInfo().closestMatch.values[0];
+        Debug.Log(value);
+        yield return new WaitForSeconds(2);
+        isActive = false;
+        yield return new WaitForSeconds(1);
+        currentPiece.movementValue = value;
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - Black
   - Arrow
   - Roller
+  - Edge
   layers:
   - Default
   - TransparentFX

@@ -11,11 +11,14 @@ public class basePiece : MonoBehaviour
     private List<GameObject> allies = new List<GameObject>();
 
     public int direction;
-    public Vector3[] directions;
+    public Transform[] dirs;
 
     public GameObject arrows;
 
     public int movementValue;
+    public float speed;
+
+    private Transform targetTile;
 
 	void Start ()
     {
@@ -24,11 +27,37 @@ public class basePiece : MonoBehaviour
             allies.Remove(this.gameObject);
 
         arrows = transform.GetChild(0).gameObject;
+
+        dirs = new Transform[transform.GetChild(1).childCount];
+        for (int i = 0; i < dirs.Length; i++)
+        {
+            dirs[i] = transform.GetChild(1).GetChild(i);
+        }
+
+        GameObject[] tiles = GameObject.FindGameObjectsWithTag("Tile");
+        int closestIndex = 0;
+        float closestDistance = 100;
+        for (int i = 0; i < tiles.Length; i++)
+        {
+            if (Vector3.Distance(transform.position, tiles[i].transform.position) < closestDistance)
+            {
+                closestDistance = Vector3.Distance(transform.position, tiles[i].transform.position);
+                closestIndex = i;
+            }
+        }
+        targetTile = tiles[closestIndex].transform;
 	}
 	
 	void Update ()
     {
-		
+        if (movementValue > 0)
+        {
+            float d = Vector2.Distance(transform.position, targetTile.position);
+            if (d < float.Epsilon)
+                SetMovement();
+
+            transform.position = Vector2.MoveTowards(transform.position, targetTile.position, Time.deltaTime * speed);
+        }
 	}
 
     private void OnMouseDown()
@@ -43,5 +72,16 @@ public class basePiece : MonoBehaviour
 
             g.GetComponent<basePiece>().arrows.SetActive(false);
         }
+    }
+
+    private void SetMovement()
+    {
+        if (dirs[direction].GetComponent<checkAvailability>().available)
+        {
+            targetTile = dirs[direction].GetComponent<checkAvailability>().NearestTile();
+            movementValue--;
+        }
+        else
+            movementValue = 0;
     }
 }
