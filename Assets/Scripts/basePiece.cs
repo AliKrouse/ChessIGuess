@@ -57,6 +57,8 @@ public class basePiece : MonoBehaviour
                 SetMovement();
 
             transform.position = Vector2.MoveTowards(transform.position, targetTile.position, Time.deltaTime * speed);
+
+            Debug.DrawLine(transform.position, targetTile.position);
         }
 	}
 

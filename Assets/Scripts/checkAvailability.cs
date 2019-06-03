@@ -25,9 +25,11 @@ public class checkAvailability : MonoBehaviour
             available = true;
         else
             available = false;
+
+        arrow.SetActive(available);
 	}
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Edge"))
             touchingEdge = true;

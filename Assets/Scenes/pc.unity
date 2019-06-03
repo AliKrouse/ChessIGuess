@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 13205359}
   - component: {fileID: 13205360}
   - component: {fileID: 13205361}
+  - component: {fileID: 13205362}
   m_Layer: 0
   m_Name: ul
   m_TagString: Untagged
@@ -393,7 +394,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &13205362
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 13205358}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &15701822
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,6 +810,7 @@ GameObject:
   - component: {fileID: 36287236}
   - component: {fileID: 36287237}
   - component: {fileID: 36287238}
+  - component: {fileID: 36287239}
   m_Layer: 0
   m_Name: l
   m_TagString: Untagged
@@ -837,7 +856,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &36287239
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 36287235}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &36688460
 Prefab:
   m_ObjectHideFlags: 0
@@ -1242,7 +1278,7 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 10
+  speed: 1
 --- !u!65 &48604466
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1255,6 +1291,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.016402196, y: 0.016402202, z: 0.02900337}
   m_Center: {x: 4.656613e-10, y: 0, z: 0.014633251}
+--- !u!84 &57309016
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 808
+  m_Height: 454
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &62833269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,6 +1360,7 @@ GameObject:
   - component: {fileID: 64450750}
   - component: {fileID: 64450751}
   - component: {fileID: 64450752}
+  - component: {fileID: 64450753}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -1338,7 +1406,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &64450753
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 64450749}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &64810146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,6 +1434,7 @@ GameObject:
   - component: {fileID: 64810147}
   - component: {fileID: 64810148}
   - component: {fileID: 64810149}
+  - component: {fileID: 64810150}
   m_Layer: 0
   m_Name: dl
   m_TagString: Untagged
@@ -1394,7 +1480,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &64810150
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 64810146}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &68815728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1743,6 +1846,7 @@ GameObject:
   - component: {fileID: 78285113}
   - component: {fileID: 78285114}
   - component: {fileID: 78285115}
+  - component: {fileID: 78285116}
   m_Layer: 0
   m_Name: ur
   m_TagString: Untagged
@@ -1788,7 +1892,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &78285116
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 78285112}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &80830028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,6 +2017,7 @@ GameObject:
   - component: {fileID: 82262733}
   - component: {fileID: 82262734}
   - component: {fileID: 82262735}
+  - component: {fileID: 82262736}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -1941,7 +2063,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &82262736
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 82262732}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &86061227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1952,6 +2091,7 @@ GameObject:
   - component: {fileID: 86061228}
   - component: {fileID: 86061229}
   - component: {fileID: 86061230}
+  - component: {fileID: 86061231}
   m_Layer: 0
   m_Name: ur1
   m_TagString: Untagged
@@ -1997,7 +2137,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &86061231
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 86061227}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &88483016
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,6 +2165,7 @@ GameObject:
   - component: {fileID: 88483017}
   - component: {fileID: 88483018}
   - component: {fileID: 88483019}
+  - component: {fileID: 88483020}
   m_Layer: 0
   m_Name: dl
   m_TagString: Untagged
@@ -2053,7 +2211,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &88483020
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 88483016}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &92765069
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,6 +2336,7 @@ GameObject:
   - component: {fileID: 97659151}
   - component: {fileID: 97659152}
   - component: {fileID: 97659153}
+  - component: {fileID: 97659154}
   m_Layer: 0
   m_Name: dr
   m_TagString: Untagged
@@ -2206,7 +2382,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &97659154
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 97659150}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &101410044
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,6 +2410,7 @@ GameObject:
   - component: {fileID: 101410045}
   - component: {fileID: 101410046}
   - component: {fileID: 101410047}
+  - component: {fileID: 101410048}
   m_Layer: 0
   m_Name: dl2
   m_TagString: Untagged
@@ -2262,7 +2456,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &101410048
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 101410044}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &102945474
 GameObject:
   m_ObjectHideFlags: 0
@@ -2586,6 +2797,7 @@ GameObject:
   - component: {fileID: 118356740}
   - component: {fileID: 118356741}
   - component: {fileID: 118356742}
+  - component: {fileID: 118356743}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -2631,7 +2843,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &118356743
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 118356739}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &124748729
 GameObject:
   m_ObjectHideFlags: 0
@@ -3140,6 +3369,7 @@ GameObject:
   - component: {fileID: 139833253}
   - component: {fileID: 139833254}
   - component: {fileID: 139833255}
+  - component: {fileID: 139833256}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -3185,7 +3415,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &139833256
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 139833252}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &144692434
 GameObject:
   m_ObjectHideFlags: 0
@@ -3324,6 +3571,7 @@ GameObject:
   - component: {fileID: 169524555}
   - component: {fileID: 169524556}
   - component: {fileID: 169524557}
+  - component: {fileID: 169524558}
   m_Layer: 0
   m_Name: ul
   m_TagString: Untagged
@@ -3369,7 +3617,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &169524558
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 169524554}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &170036804
 GameObject:
   m_ObjectHideFlags: 0
@@ -3770,6 +4035,7 @@ GameObject:
   - component: {fileID: 204170738}
   - component: {fileID: 204170739}
   - component: {fileID: 204170740}
+  - component: {fileID: 204170741}
   m_Layer: 0
   m_Name: dr
   m_TagString: Untagged
@@ -3815,7 +4081,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &204170741
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 204170737}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &205714569
 GameObject:
   m_ObjectHideFlags: 0
@@ -4052,6 +4335,7 @@ GameObject:
   - component: {fileID: 216858295}
   - component: {fileID: 216858296}
   - component: {fileID: 216858297}
+  - component: {fileID: 216858298}
   m_Layer: 0
   m_Name: dr
   m_TagString: Untagged
@@ -4097,7 +4381,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &216858298
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 216858294}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &217726256
 GameObject:
   m_ObjectHideFlags: 0
@@ -4358,6 +4659,7 @@ GameObject:
   - component: {fileID: 240485028}
   - component: {fileID: 240485029}
   - component: {fileID: 240485030}
+  - component: {fileID: 240485031}
   m_Layer: 0
   m_Name: r
   m_TagString: Untagged
@@ -4403,7 +4705,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &240485031
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 240485027}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &241024520
 GameObject:
   m_ObjectHideFlags: 0
@@ -4511,6 +4830,7 @@ GameObject:
   - component: {fileID: 241681748}
   - component: {fileID: 241681749}
   - component: {fileID: 241681750}
+  - component: {fileID: 241681751}
   m_Layer: 0
   m_Name: ur
   m_TagString: Untagged
@@ -4556,7 +4876,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &241681751
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 241681747}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &242425844
 GameObject:
   m_ObjectHideFlags: 0
@@ -5078,7 +5415,7 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 10
+  speed: 1
 --- !u!65 &272510176
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5331,6 +5668,7 @@ GameObject:
   - component: {fileID: 294873960}
   - component: {fileID: 294873961}
   - component: {fileID: 294873962}
+  - component: {fileID: 294873963}
   m_Layer: 0
   m_Name: dl
   m_TagString: Untagged
@@ -5376,7 +5714,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &294873963
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 294873959}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &298166629
 GameObject:
   m_ObjectHideFlags: 0
@@ -5727,6 +6082,7 @@ GameObject:
   - component: {fileID: 329501977}
   - component: {fileID: 329501978}
   - component: {fileID: 329501979}
+  - component: {fileID: 329501980}
   m_Layer: 0
   m_Name: ur
   m_TagString: Untagged
@@ -5772,7 +6128,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &329501980
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 329501976}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &334055916
 GameObject:
   m_ObjectHideFlags: 0
@@ -6419,6 +6792,7 @@ GameObject:
   - component: {fileID: 356706859}
   - component: {fileID: 356706860}
   - component: {fileID: 356706861}
+  - component: {fileID: 356706862}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -6464,7 +6838,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &356706862
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 356706858}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &357948828
 GameObject:
   m_ObjectHideFlags: 0
@@ -6843,6 +7234,7 @@ GameObject:
   - component: {fileID: 384943134}
   - component: {fileID: 384943135}
   - component: {fileID: 384943136}
+  - component: {fileID: 384943137}
   m_Layer: 0
   m_Name: ur2
   m_TagString: Untagged
@@ -6888,7 +7280,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &384943137
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 384943133}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &386734919
 Prefab:
   m_ObjectHideFlags: 0
@@ -6984,7 +7393,7 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 10
+  speed: 1
 --- !u!65 &386734925
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7007,6 +7416,7 @@ GameObject:
   - component: {fileID: 387276219}
   - component: {fileID: 387276220}
   - component: {fileID: 387276221}
+  - component: {fileID: 387276222}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -7052,7 +7462,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &387276222
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 387276218}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &387933072
 GameObject:
   m_ObjectHideFlags: 0
@@ -7160,6 +7587,7 @@ GameObject:
   - component: {fileID: 395016701}
   - component: {fileID: 395016702}
   - component: {fileID: 395016703}
+  - component: {fileID: 395016704}
   m_Layer: 0
   m_Name: ul
   m_TagString: Untagged
@@ -7205,7 +7633,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &395016704
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 395016700}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &404309488
 GameObject:
   m_ObjectHideFlags: 0
@@ -7494,6 +7939,7 @@ GameObject:
   - component: {fileID: 445250575}
   - component: {fileID: 445250576}
   - component: {fileID: 445250577}
+  - component: {fileID: 445250578}
   m_Layer: 0
   m_Name: ur
   m_TagString: Untagged
@@ -7539,7 +7985,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &445250578
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 445250574}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &446095068
 GameObject:
   m_ObjectHideFlags: 0
@@ -7550,6 +8013,7 @@ GameObject:
   - component: {fileID: 446095069}
   - component: {fileID: 446095070}
   - component: {fileID: 446095071}
+  - component: {fileID: 446095072}
   m_Layer: 0
   m_Name: l
   m_TagString: Untagged
@@ -7595,7 +8059,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &446095072
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 446095068}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &448132332
 GameObject:
   m_ObjectHideFlags: 0
@@ -7606,6 +8087,7 @@ GameObject:
   - component: {fileID: 448132333}
   - component: {fileID: 448132334}
   - component: {fileID: 448132335}
+  - component: {fileID: 448132336}
   m_Layer: 0
   m_Name: ur
   m_TagString: Untagged
@@ -7651,7 +8133,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &448132336
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448132332}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &450571916
 GameObject:
   m_ObjectHideFlags: 0
@@ -7759,6 +8258,7 @@ GameObject:
   - component: {fileID: 453684933}
   - component: {fileID: 453684934}
   - component: {fileID: 453684935}
+  - component: {fileID: 453684936}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -7804,7 +8304,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &453684936
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 453684932}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &455608383
 GameObject:
   m_ObjectHideFlags: 0
@@ -8013,8 +8530,8 @@ MonoBehaviour:
   sourceCamera: {fileID: 459304754}
   outlineCamera: {fileID: 1689613445}
   outlineShaderMaterial: {fileID: 0}
-  renderTexture: {fileID: 892680144}
-  extraRenderTexture: {fileID: 1741842535}
+  renderTexture: {fileID: 57309016}
+  extraRenderTexture: {fileID: 1705723364}
 --- !u!114 &459304757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8036,6 +8553,7 @@ GameObject:
   - component: {fileID: 472134461}
   - component: {fileID: 472134462}
   - component: {fileID: 472134463}
+  - component: {fileID: 472134464}
   m_Layer: 0
   m_Name: r
   m_TagString: Untagged
@@ -8081,7 +8599,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &472134464
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 472134460}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &476806120
 GameObject:
   m_ObjectHideFlags: 0
@@ -8208,7 +8743,7 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 10
+  speed: 1
 --- !u!65 &477288086
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8320,6 +8855,7 @@ GameObject:
   - component: {fileID: 480575785}
   - component: {fileID: 480575786}
   - component: {fileID: 480575787}
+  - component: {fileID: 480575788}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -8365,7 +8901,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &480575788
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 480575784}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &494703378
 GameObject:
   m_ObjectHideFlags: 0
@@ -8598,6 +9151,7 @@ GameObject:
   - component: {fileID: 513184697}
   - component: {fileID: 513184698}
   - component: {fileID: 513184699}
+  - component: {fileID: 513184700}
   m_Layer: 0
   m_Name: ul
   m_TagString: Untagged
@@ -8643,7 +9197,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &513184700
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 513184696}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &513307312
 GameObject:
   m_ObjectHideFlags: 0
@@ -8851,6 +9422,7 @@ GameObject:
   - component: {fileID: 527329999}
   - component: {fileID: 527330000}
   - component: {fileID: 527330001}
+  - component: {fileID: 527330002}
   m_Layer: 0
   m_Name: ur
   m_TagString: Untagged
@@ -8896,7 +9468,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &527330002
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 527329998}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &529637840
 GameObject:
   m_ObjectHideFlags: 0
@@ -9157,6 +9746,7 @@ GameObject:
   - component: {fileID: 551904770}
   - component: {fileID: 551904771}
   - component: {fileID: 551904772}
+  - component: {fileID: 551904773}
   m_Layer: 0
   m_Name: ul
   m_TagString: Untagged
@@ -9202,7 +9792,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &551904773
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 551904769}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &553773871
 GameObject:
   m_ObjectHideFlags: 0
@@ -9501,6 +10108,7 @@ GameObject:
   - component: {fileID: 572119043}
   - component: {fileID: 572119044}
   - component: {fileID: 572119045}
+  - component: {fileID: 572119046}
   m_Layer: 0
   m_Name: dr
   m_TagString: Untagged
@@ -9546,7 +10154,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &572119046
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 572119042}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &579654273
 GameObject:
   m_ObjectHideFlags: 0
@@ -9585,6 +10210,7 @@ GameObject:
   - component: {fileID: 585055648}
   - component: {fileID: 585055649}
   - component: {fileID: 585055650}
+  - component: {fileID: 585055651}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -9630,7 +10256,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &585055651
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 585055647}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &586967754
 GameObject:
   m_ObjectHideFlags: 0
@@ -9641,6 +10284,7 @@ GameObject:
   - component: {fileID: 586967755}
   - component: {fileID: 586967756}
   - component: {fileID: 586967757}
+  - component: {fileID: 586967758}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -9686,7 +10330,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &586967758
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 586967754}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &588308532
 GameObject:
   m_ObjectHideFlags: 0
@@ -10536,6 +11197,7 @@ GameObject:
   - component: {fileID: 653132515}
   - component: {fileID: 653132516}
   - component: {fileID: 653132517}
+  - component: {fileID: 653132518}
   m_Layer: 0
   m_Name: ul
   m_TagString: Untagged
@@ -10581,7 +11243,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &653132518
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 653132514}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &660490795
 GameObject:
   m_ObjectHideFlags: 0
@@ -10592,6 +11271,7 @@ GameObject:
   - component: {fileID: 660490796}
   - component: {fileID: 660490797}
   - component: {fileID: 660490798}
+  - component: {fileID: 660490799}
   m_Layer: 0
   m_Name: ur1
   m_TagString: Untagged
@@ -10637,7 +11317,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &660490799
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 660490795}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &664202110
 GameObject:
   m_ObjectHideFlags: 0
@@ -10842,6 +11539,7 @@ GameObject:
   - component: {fileID: 672515408}
   - component: {fileID: 672515409}
   - component: {fileID: 672515410}
+  - component: {fileID: 672515411}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -10887,7 +11585,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &672515411
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 672515407}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &675713433
 GameObject:
   m_ObjectHideFlags: 0
@@ -10930,6 +11645,7 @@ GameObject:
   - component: {fileID: 679976374}
   - component: {fileID: 679976375}
   - component: {fileID: 679976376}
+  - component: {fileID: 679976377}
   m_Layer: 0
   m_Name: r
   m_TagString: Untagged
@@ -10975,7 +11691,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &679976377
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 679976373}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &683207004
 GameObject:
   m_ObjectHideFlags: 0
@@ -11180,6 +11913,7 @@ GameObject:
   - component: {fileID: 699785474}
   - component: {fileID: 699785475}
   - component: {fileID: 699785476}
+  - component: {fileID: 699785477}
   m_Layer: 0
   m_Name: dl2
   m_TagString: Untagged
@@ -11225,7 +11959,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &699785477
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 699785473}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &701886417
 GameObject:
   m_ObjectHideFlags: 0
@@ -11236,6 +11987,7 @@ GameObject:
   - component: {fileID: 701886418}
   - component: {fileID: 701886419}
   - component: {fileID: 701886420}
+  - component: {fileID: 701886421}
   m_Layer: 0
   m_Name: dl
   m_TagString: Untagged
@@ -11281,7 +12033,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &701886421
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 701886417}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &705923699
 GameObject:
   m_ObjectHideFlags: 0
@@ -11611,6 +12380,7 @@ GameObject:
   - component: {fileID: 721546008}
   - component: {fileID: 721546009}
   - component: {fileID: 721546010}
+  - component: {fileID: 721546011}
   m_Layer: 0
   m_Name: dl
   m_TagString: Untagged
@@ -11656,7 +12426,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &721546011
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721546007}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &723168748
 GameObject:
   m_ObjectHideFlags: 0
@@ -11792,6 +12579,7 @@ GameObject:
   - component: {fileID: 739586126}
   - component: {fileID: 739586127}
   - component: {fileID: 739586128}
+  - component: {fileID: 739586129}
   m_Layer: 0
   m_Name: dr
   m_TagString: Untagged
@@ -11837,7 +12625,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &739586129
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 739586125}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &740385991
 GameObject:
   m_ObjectHideFlags: 0
@@ -12259,6 +13064,7 @@ GameObject:
   - component: {fileID: 765954811}
   - component: {fileID: 765954812}
   - component: {fileID: 765954813}
+  - component: {fileID: 765954814}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -12304,7 +13110,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &765954814
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 765954810}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &774736878
 GameObject:
   m_ObjectHideFlags: 0
@@ -12315,6 +13138,7 @@ GameObject:
   - component: {fileID: 774736879}
   - component: {fileID: 774736880}
   - component: {fileID: 774736881}
+  - component: {fileID: 774736882}
   m_Layer: 0
   m_Name: dr2
   m_TagString: Untagged
@@ -12360,7 +13184,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &774736882
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 774736878}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &784030350
 GameObject:
   m_ObjectHideFlags: 0
@@ -12496,6 +13337,7 @@ GameObject:
   - component: {fileID: 793714887}
   - component: {fileID: 793714888}
   - component: {fileID: 793714889}
+  - component: {fileID: 793714890}
   m_Layer: 0
   m_Name: ur2
   m_TagString: Untagged
@@ -12541,7 +13383,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &793714890
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 793714886}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &794546773
 GameObject:
   m_ObjectHideFlags: 0
@@ -12709,6 +13568,7 @@ GameObject:
   - component: {fileID: 835725189}
   - component: {fileID: 835725190}
   - component: {fileID: 835725191}
+  - component: {fileID: 835725192}
   m_Layer: 0
   m_Name: ul2
   m_TagString: Untagged
@@ -12754,7 +13614,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &835725192
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 835725188}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &842288575
 GameObject:
   m_ObjectHideFlags: 0
@@ -12765,6 +13642,7 @@ GameObject:
   - component: {fileID: 842288576}
   - component: {fileID: 842288577}
   - component: {fileID: 842288578}
+  - component: {fileID: 842288579}
   m_Layer: 0
   m_Name: dr
   m_TagString: Untagged
@@ -12810,7 +13688,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &842288579
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 842288575}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &845911867
 Prefab:
   m_ObjectHideFlags: 0
@@ -12906,7 +13801,7 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 1465130409}
   movementValue: 0
-  speed: 10
+  speed: 1
 --- !u!65 &845911873
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12929,6 +13824,7 @@ GameObject:
   - component: {fileID: 853587997}
   - component: {fileID: 853587998}
   - component: {fileID: 853587999}
+  - component: {fileID: 853588000}
   m_Layer: 0
   m_Name: ur
   m_TagString: Untagged
@@ -12974,7 +13870,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &853588000
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 853587996}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &858164099
 GameObject:
   m_ObjectHideFlags: 0
@@ -12985,6 +13898,7 @@ GameObject:
   - component: {fileID: 858164100}
   - component: {fileID: 858164101}
   - component: {fileID: 858164102}
+  - component: {fileID: 858164103}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -13030,7 +13944,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &858164103
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 858164099}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &859373979
 GameObject:
   m_ObjectHideFlags: 0
@@ -13041,6 +13972,7 @@ GameObject:
   - component: {fileID: 859373980}
   - component: {fileID: 859373981}
   - component: {fileID: 859373982}
+  - component: {fileID: 859373983}
   m_Layer: 0
   m_Name: ur2
   m_TagString: Untagged
@@ -13086,7 +14018,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &859373983
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 859373979}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &861483500
 GameObject:
   m_ObjectHideFlags: 0
@@ -13097,6 +14046,7 @@ GameObject:
   - component: {fileID: 861483501}
   - component: {fileID: 861483502}
   - component: {fileID: 861483503}
+  - component: {fileID: 861483504}
   m_Layer: 0
   m_Name: dr
   m_TagString: Untagged
@@ -13142,7 +14092,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &861483504
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 861483500}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &867727340
 GameObject:
   m_ObjectHideFlags: 0
@@ -13153,6 +14120,7 @@ GameObject:
   - component: {fileID: 867727341}
   - component: {fileID: 867727342}
   - component: {fileID: 867727343}
+  - component: {fileID: 867727344}
   m_Layer: 0
   m_Name: ul
   m_TagString: Untagged
@@ -13198,7 +14166,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &867727344
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 867727340}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &873585326
 GameObject:
   m_ObjectHideFlags: 0
@@ -13306,6 +14291,7 @@ GameObject:
   - component: {fileID: 887328330}
   - component: {fileID: 887328331}
   - component: {fileID: 887328332}
+  - component: {fileID: 887328333}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -13351,7 +14337,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &887328333
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 887328329}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &887861578
 GameObject:
   m_ObjectHideFlags: 0
@@ -13362,6 +14365,7 @@ GameObject:
   - component: {fileID: 887861579}
   - component: {fileID: 887861580}
   - component: {fileID: 887861581}
+  - component: {fileID: 887861582}
   m_Layer: 0
   m_Name: dl
   m_TagString: Untagged
@@ -13407,7 +14411,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &887861582
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 887861578}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &890655315
 GameObject:
   m_ObjectHideFlags: 0
@@ -13418,6 +14439,7 @@ GameObject:
   - component: {fileID: 890655316}
   - component: {fileID: 890655317}
   - component: {fileID: 890655318}
+  - component: {fileID: 890655319}
   m_Layer: 0
   m_Name: dr
   m_TagString: Untagged
@@ -13463,38 +14485,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
---- !u!84 &892680144
-RenderTexture:
+--- !u!54 &890655319
+Rigidbody:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 808
-  m_Height: 454
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
+  m_GameObject: {fileID: 890655315}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &893543111
 GameObject:
   m_ObjectHideFlags: 0
@@ -13602,6 +14610,7 @@ GameObject:
   - component: {fileID: 896465168}
   - component: {fileID: 896465169}
   - component: {fileID: 896465170}
+  - component: {fileID: 896465171}
   m_Layer: 0
   m_Name: ur
   m_TagString: Untagged
@@ -13647,7 +14656,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &896465171
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 896465167}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &907352029
 GameObject:
   m_ObjectHideFlags: 0
@@ -13694,6 +14720,7 @@ GameObject:
   - component: {fileID: 911963983}
   - component: {fileID: 911963984}
   - component: {fileID: 911963985}
+  - component: {fileID: 911963986}
   m_Layer: 0
   m_Name: dl
   m_TagString: Untagged
@@ -13739,7 +14766,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &911963986
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 911963982}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &917139774
 GameObject:
   m_ObjectHideFlags: 0
@@ -13750,6 +14794,7 @@ GameObject:
   - component: {fileID: 917139775}
   - component: {fileID: 917139776}
   - component: {fileID: 917139777}
+  - component: {fileID: 917139778}
   m_Layer: 0
   m_Name: ul
   m_TagString: Untagged
@@ -13795,7 +14840,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &917139778
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 917139774}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &920592764
 GameObject:
   m_ObjectHideFlags: 0
@@ -13806,6 +14868,7 @@ GameObject:
   - component: {fileID: 920592765}
   - component: {fileID: 920592766}
   - component: {fileID: 920592767}
+  - component: {fileID: 920592768}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -13851,7 +14914,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &920592768
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 920592764}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &923837540
 GameObject:
   m_ObjectHideFlags: 0
@@ -14433,7 +15513,7 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 10
+  speed: 1
 --- !u!65 &945793033
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14456,6 +15536,7 @@ GameObject:
   - component: {fileID: 946381949}
   - component: {fileID: 946381950}
   - component: {fileID: 946381951}
+  - component: {fileID: 946381952}
   m_Layer: 0
   m_Name: l
   m_TagString: Untagged
@@ -14501,7 +15582,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &946381952
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 946381948}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &950468841
 Prefab:
   m_ObjectHideFlags: 0
@@ -14593,7 +15691,7 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 10
+  speed: 1
 --- !u!65 &950468847
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14841,6 +15939,7 @@ GameObject:
   - component: {fileID: 958964007}
   - component: {fileID: 958964008}
   - component: {fileID: 958964009}
+  - component: {fileID: 958964010}
   m_Layer: 0
   m_Name: dl
   m_TagString: Untagged
@@ -14886,7 +15985,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &958964010
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 958964006}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &959279554
 GameObject:
   m_ObjectHideFlags: 0
@@ -14897,6 +16013,7 @@ GameObject:
   - component: {fileID: 959279555}
   - component: {fileID: 959279556}
   - component: {fileID: 959279557}
+  - component: {fileID: 959279558}
   m_Layer: 0
   m_Name: dr
   m_TagString: Untagged
@@ -14942,7 +16059,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &959279558
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 959279554}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &963559588
 GameObject:
   m_ObjectHideFlags: 0
@@ -14953,6 +16087,7 @@ GameObject:
   - component: {fileID: 963559589}
   - component: {fileID: 963559590}
   - component: {fileID: 963559591}
+  - component: {fileID: 963559592}
   m_Layer: 0
   m_Name: ul2
   m_TagString: Untagged
@@ -14998,7 +16133,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &963559592
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 963559588}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &964499073
 GameObject:
   m_ObjectHideFlags: 0
@@ -15106,6 +16258,7 @@ GameObject:
   - component: {fileID: 969522410}
   - component: {fileID: 969522411}
   - component: {fileID: 969522412}
+  - component: {fileID: 969522413}
   m_Layer: 0
   m_Name: ul
   m_TagString: Untagged
@@ -15151,7 +16304,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &969522413
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 969522409}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &974435551
 Prefab:
   m_ObjectHideFlags: 0
@@ -15247,7 +16417,7 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 10
+  speed: 1
 --- !u!65 &974435557
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15378,6 +16548,7 @@ GameObject:
   - component: {fileID: 978437270}
   - component: {fileID: 978437271}
   - component: {fileID: 978437272}
+  - component: {fileID: 978437273}
   m_Layer: 0
   m_Name: dr
   m_TagString: Untagged
@@ -15423,7 +16594,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &978437273
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 978437269}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &981567429
 GameObject:
   m_ObjectHideFlags: 0
@@ -15434,6 +16622,7 @@ GameObject:
   - component: {fileID: 981567430}
   - component: {fileID: 981567431}
   - component: {fileID: 981567432}
+  - component: {fileID: 981567433}
   m_Layer: 0
   m_Name: ur
   m_TagString: Untagged
@@ -15479,7 +16668,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &981567433
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 981567429}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &997877955
 GameObject:
   m_ObjectHideFlags: 0
@@ -15490,6 +16696,7 @@ GameObject:
   - component: {fileID: 997877956}
   - component: {fileID: 997877957}
   - component: {fileID: 997877958}
+  - component: {fileID: 997877959}
   m_Layer: 0
   m_Name: dr1
   m_TagString: Untagged
@@ -15535,7 +16742,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &997877959
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 997877955}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &999231403
 GameObject:
   m_ObjectHideFlags: 0
@@ -15546,6 +16770,7 @@ GameObject:
   - component: {fileID: 999231404}
   - component: {fileID: 999231405}
   - component: {fileID: 999231406}
+  - component: {fileID: 999231407}
   m_Layer: 0
   m_Name: dl
   m_TagString: Untagged
@@ -15591,7 +16816,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &999231407
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 999231403}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1006170492
 GameObject:
   m_ObjectHideFlags: 0
@@ -15957,6 +17199,7 @@ GameObject:
   - component: {fileID: 1037840280}
   - component: {fileID: 1037840281}
   - component: {fileID: 1037840282}
+  - component: {fileID: 1037840283}
   m_Layer: 0
   m_Name: ur
   m_TagString: Untagged
@@ -16002,7 +17245,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1037840283
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1037840279}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1039723901
 GameObject:
   m_ObjectHideFlags: 0
@@ -16013,6 +17273,7 @@ GameObject:
   - component: {fileID: 1039723902}
   - component: {fileID: 1039723903}
   - component: {fileID: 1039723904}
+  - component: {fileID: 1039723905}
   m_Layer: 0
   m_Name: dl2
   m_TagString: Untagged
@@ -16058,7 +17319,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1039723905
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1039723901}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1044280837
 GameObject:
   m_ObjectHideFlags: 0
@@ -16069,6 +17347,7 @@ GameObject:
   - component: {fileID: 1044280838}
   - component: {fileID: 1044280839}
   - component: {fileID: 1044280840}
+  - component: {fileID: 1044280841}
   m_Layer: 0
   m_Name: dl1
   m_TagString: Untagged
@@ -16114,7 +17393,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1044280841
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1044280837}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1046127750
 GameObject:
   m_ObjectHideFlags: 0
@@ -16288,6 +17584,7 @@ GameObject:
   - component: {fileID: 1048280959}
   - component: {fileID: 1048280960}
   - component: {fileID: 1048280961}
+  - component: {fileID: 1048280962}
   m_Layer: 0
   m_Name: ul
   m_TagString: Untagged
@@ -16333,7 +17630,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1048280962
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1048280958}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1049295388
 GameObject:
   m_ObjectHideFlags: 0
@@ -16344,6 +17658,7 @@ GameObject:
   - component: {fileID: 1049295389}
   - component: {fileID: 1049295390}
   - component: {fileID: 1049295391}
+  - component: {fileID: 1049295392}
   m_Layer: 0
   m_Name: r
   m_TagString: Untagged
@@ -16389,7 +17704,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1049295392
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1049295388}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1051365708
 Prefab:
   m_ObjectHideFlags: 0
@@ -16702,6 +18034,7 @@ GameObject:
   - component: {fileID: 1077707575}
   - component: {fileID: 1077707576}
   - component: {fileID: 1077707577}
+  - component: {fileID: 1077707578}
   m_Layer: 0
   m_Name: dr
   m_TagString: Untagged
@@ -16747,7 +18080,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1077707578
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1077707574}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1078253482
 GameObject:
   m_ObjectHideFlags: 0
@@ -16855,6 +18205,7 @@ GameObject:
   - component: {fileID: 1080353801}
   - component: {fileID: 1080353802}
   - component: {fileID: 1080353803}
+  - component: {fileID: 1080353804}
   m_Layer: 0
   m_Name: r
   m_TagString: Untagged
@@ -16900,7 +18251,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1080353804
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1080353800}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1080769804
 GameObject:
   m_ObjectHideFlags: 0
@@ -16911,6 +18279,7 @@ GameObject:
   - component: {fileID: 1080769805}
   - component: {fileID: 1080769806}
   - component: {fileID: 1080769807}
+  - component: {fileID: 1080769808}
   m_Layer: 0
   m_Name: ul1
   m_TagString: Untagged
@@ -16956,7 +18325,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1080769808
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1080769804}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1080819845
 GameObject:
   m_ObjectHideFlags: 0
@@ -17437,7 +18823,7 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 10
+  speed: 1
 --- !u!65 &1124398901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17460,6 +18846,7 @@ GameObject:
   - component: {fileID: 1126877786}
   - component: {fileID: 1126877787}
   - component: {fileID: 1126877788}
+  - component: {fileID: 1126877789}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -17505,7 +18892,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1126877789
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1126877785}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1133728434
 GameObject:
   m_ObjectHideFlags: 0
@@ -17516,6 +18920,7 @@ GameObject:
   - component: {fileID: 1133728435}
   - component: {fileID: 1133728436}
   - component: {fileID: 1133728437}
+  - component: {fileID: 1133728438}
   m_Layer: 0
   m_Name: r
   m_TagString: Untagged
@@ -17561,7 +18966,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1133728438
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1133728434}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1135130664
 GameObject:
   m_ObjectHideFlags: 0
@@ -18045,6 +19467,7 @@ GameObject:
   - component: {fileID: 1160279024}
   - component: {fileID: 1160279025}
   - component: {fileID: 1160279026}
+  - component: {fileID: 1160279027}
   m_Layer: 0
   m_Name: dl
   m_TagString: Untagged
@@ -18090,7 +19513,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1160279027
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1160279023}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1161975317
 GameObject:
   m_ObjectHideFlags: 0
@@ -18306,6 +19746,7 @@ GameObject:
   - component: {fileID: 1196081551}
   - component: {fileID: 1196081552}
   - component: {fileID: 1196081553}
+  - component: {fileID: 1196081554}
   m_Layer: 0
   m_Name: dl
   m_TagString: Untagged
@@ -18351,7 +19792,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1196081554
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1196081550}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1196102401
 GameObject:
   m_ObjectHideFlags: 0
@@ -18362,6 +19820,7 @@ GameObject:
   - component: {fileID: 1196102402}
   - component: {fileID: 1196102403}
   - component: {fileID: 1196102404}
+  - component: {fileID: 1196102405}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -18407,7 +19866,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1196102405
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1196102401}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1196335856
 GameObject:
   m_ObjectHideFlags: 0
@@ -18418,6 +19894,7 @@ GameObject:
   - component: {fileID: 1196335857}
   - component: {fileID: 1196335858}
   - component: {fileID: 1196335859}
+  - component: {fileID: 1196335860}
   m_Layer: 0
   m_Name: dl
   m_TagString: Untagged
@@ -18463,7 +19940,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1196335860
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1196335856}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1197672392
 GameObject:
   m_ObjectHideFlags: 0
@@ -18765,6 +20259,7 @@ GameObject:
   - component: {fileID: 1210242843}
   - component: {fileID: 1210242844}
   - component: {fileID: 1210242845}
+  - component: {fileID: 1210242846}
   m_Layer: 0
   m_Name: ul2
   m_TagString: Untagged
@@ -18810,7 +20305,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1210242846
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1210242842}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1210436833
 GameObject:
   m_ObjectHideFlags: 0
@@ -18821,6 +20333,7 @@ GameObject:
   - component: {fileID: 1210436834}
   - component: {fileID: 1210436835}
   - component: {fileID: 1210436836}
+  - component: {fileID: 1210436837}
   m_Layer: 0
   m_Name: dl1
   m_TagString: Untagged
@@ -18866,7 +20379,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1210436837
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1210436833}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1230098932
 GameObject:
   m_ObjectHideFlags: 0
@@ -18877,6 +20407,7 @@ GameObject:
   - component: {fileID: 1230098933}
   - component: {fileID: 1230098934}
   - component: {fileID: 1230098935}
+  - component: {fileID: 1230098936}
   m_Layer: 0
   m_Name: ur
   m_TagString: Untagged
@@ -18922,7 +20453,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1230098936
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1230098932}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1234508659
 GameObject:
   m_ObjectHideFlags: 0
@@ -19061,6 +20609,7 @@ GameObject:
   - component: {fileID: 1236363667}
   - component: {fileID: 1236363668}
   - component: {fileID: 1236363669}
+  - component: {fileID: 1236363670}
   m_Layer: 0
   m_Name: ur
   m_TagString: Untagged
@@ -19106,7 +20655,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1236363670
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1236363666}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1244627147
 GameObject:
   m_ObjectHideFlags: 0
@@ -19117,6 +20683,7 @@ GameObject:
   - component: {fileID: 1244627148}
   - component: {fileID: 1244627149}
   - component: {fileID: 1244627150}
+  - component: {fileID: 1244627151}
   m_Layer: 0
   m_Name: ul
   m_TagString: Untagged
@@ -19162,7 +20729,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1244627151
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1244627147}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1245059150
 GameObject:
   m_ObjectHideFlags: 0
@@ -19270,6 +20854,7 @@ GameObject:
   - component: {fileID: 1250314190}
   - component: {fileID: 1250314191}
   - component: {fileID: 1250314192}
+  - component: {fileID: 1250314193}
   m_Layer: 0
   m_Name: ul
   m_TagString: Untagged
@@ -19315,7 +20900,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1250314193
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1250314189}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1254053824
 GameObject:
   m_ObjectHideFlags: 0
@@ -19451,6 +21053,7 @@ GameObject:
   - component: {fileID: 1258321158}
   - component: {fileID: 1258321159}
   - component: {fileID: 1258321160}
+  - component: {fileID: 1258321161}
   m_Layer: 0
   m_Name: dr2
   m_TagString: Untagged
@@ -19496,7 +21099,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1258321161
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1258321157}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1265800451
 GameObject:
   m_ObjectHideFlags: 0
@@ -19507,6 +21127,7 @@ GameObject:
   - component: {fileID: 1265800452}
   - component: {fileID: 1265800453}
   - component: {fileID: 1265800454}
+  - component: {fileID: 1265800455}
   m_Layer: 0
   m_Name: dr
   m_TagString: Untagged
@@ -19552,7 +21173,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1265800455
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1265800451}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1266065803
 GameObject:
   m_ObjectHideFlags: 0
@@ -19764,6 +21402,7 @@ GameObject:
   - component: {fileID: 1271870390}
   - component: {fileID: 1271870391}
   - component: {fileID: 1271870392}
+  - component: {fileID: 1271870393}
   m_Layer: 0
   m_Name: l
   m_TagString: Untagged
@@ -19809,7 +21448,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1271870393
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1271870389}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1273046381
 GameObject:
   m_ObjectHideFlags: 0
@@ -20042,6 +21698,7 @@ GameObject:
   - component: {fileID: 1281835722}
   - component: {fileID: 1281835723}
   - component: {fileID: 1281835724}
+  - component: {fileID: 1281835725}
   m_Layer: 0
   m_Name: dl
   m_TagString: Untagged
@@ -20087,7 +21744,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1281835725
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1281835721}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1287958603
 GameObject:
   m_ObjectHideFlags: 0
@@ -20664,6 +22338,7 @@ GameObject:
   - component: {fileID: 1329956330}
   - component: {fileID: 1329956331}
   - component: {fileID: 1329956332}
+  - component: {fileID: 1329956333}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -20709,7 +22384,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1329956333
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1329956329}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1336238559
 GameObject:
   m_ObjectHideFlags: 0
@@ -20720,6 +22412,7 @@ GameObject:
   - component: {fileID: 1336238560}
   - component: {fileID: 1336238561}
   - component: {fileID: 1336238562}
+  - component: {fileID: 1336238563}
   m_Layer: 0
   m_Name: ul1
   m_TagString: Untagged
@@ -20765,7 +22458,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1336238563
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1336238559}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1338169360
 GameObject:
   m_ObjectHideFlags: 0
@@ -21055,7 +22765,7 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 184917855}
   movementValue: 0
-  speed: 10
+  speed: 1
 --- !u!65 &1369588472
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21078,6 +22788,7 @@ GameObject:
   - component: {fileID: 1369672026}
   - component: {fileID: 1369672027}
   - component: {fileID: 1369672028}
+  - component: {fileID: 1369672029}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -21123,7 +22834,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1369672029
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1369672025}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1371680393
 Prefab:
   m_ObjectHideFlags: 0
@@ -21219,7 +22947,7 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 10
+  speed: 1
 --- !u!65 &1371680399
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21242,6 +22970,7 @@ GameObject:
   - component: {fileID: 1382932790}
   - component: {fileID: 1382932791}
   - component: {fileID: 1382932792}
+  - component: {fileID: 1382932793}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -21287,7 +23016,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1382932793
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1382932789}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1385498487
 GameObject:
   m_ObjectHideFlags: 0
@@ -21358,6 +23104,7 @@ GameObject:
   - component: {fileID: 1390691155}
   - component: {fileID: 1390691156}
   - component: {fileID: 1390691157}
+  - component: {fileID: 1390691158}
   m_Layer: 0
   m_Name: dr
   m_TagString: Untagged
@@ -21403,7 +23150,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1390691158
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1390691154}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1392929612
 GameObject:
   m_ObjectHideFlags: 0
@@ -21557,6 +23321,7 @@ GameObject:
   - component: {fileID: 1401188903}
   - component: {fileID: 1401188904}
   - component: {fileID: 1401188905}
+  - component: {fileID: 1401188906}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -21602,7 +23367,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1401188906
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1401188902}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1401749550
 Prefab:
   m_ObjectHideFlags: 0
@@ -21907,7 +23689,7 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 10
+  speed: 1
 --- !u!65 &1409603892
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21930,6 +23712,7 @@ GameObject:
   - component: {fileID: 1412771926}
   - component: {fileID: 1412771927}
   - component: {fileID: 1412771928}
+  - component: {fileID: 1412771929}
   m_Layer: 0
   m_Name: ul
   m_TagString: Untagged
@@ -21975,7 +23758,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1412771929
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1412771925}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1415499366
 GameObject:
   m_ObjectHideFlags: 0
@@ -22250,6 +24050,7 @@ GameObject:
   - component: {fileID: 1436743594}
   - component: {fileID: 1436743595}
   - component: {fileID: 1436743596}
+  - component: {fileID: 1436743597}
   m_Layer: 0
   m_Name: ur1
   m_TagString: Untagged
@@ -22295,7 +24096,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1436743597
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1436743593}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1436990474
 GameObject:
   m_ObjectHideFlags: 0
@@ -22306,6 +24124,7 @@ GameObject:
   - component: {fileID: 1436990475}
   - component: {fileID: 1436990476}
   - component: {fileID: 1436990477}
+  - component: {fileID: 1436990478}
   m_Layer: 0
   m_Name: dr2
   m_TagString: Untagged
@@ -22351,7 +24170,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1436990478
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1436990474}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1441825823
 GameObject:
   m_ObjectHideFlags: 0
@@ -22362,6 +24198,7 @@ GameObject:
   - component: {fileID: 1441825824}
   - component: {fileID: 1441825825}
   - component: {fileID: 1441825826}
+  - component: {fileID: 1441825827}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -22407,7 +24244,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1441825827
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1441825823}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1443333006
 Prefab:
   m_ObjectHideFlags: 0
@@ -22720,6 +24574,7 @@ GameObject:
   - component: {fileID: 1455170763}
   - component: {fileID: 1455170764}
   - component: {fileID: 1455170765}
+  - component: {fileID: 1455170766}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -22765,7 +24620,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1455170766
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1455170762}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1461369504
 GameObject:
   m_ObjectHideFlags: 0
@@ -22839,6 +24711,7 @@ GameObject:
   - component: {fileID: 1468583171}
   - component: {fileID: 1468583172}
   - component: {fileID: 1468583173}
+  - component: {fileID: 1468583174}
   m_Layer: 0
   m_Name: ul2
   m_TagString: Untagged
@@ -22884,7 +24757,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1468583174
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1468583170}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1468711994
 GameObject:
   m_ObjectHideFlags: 0
@@ -22931,6 +24821,7 @@ GameObject:
   - component: {fileID: 1480925179}
   - component: {fileID: 1480925180}
   - component: {fileID: 1480925181}
+  - component: {fileID: 1480925182}
   m_Layer: 0
   m_Name: l
   m_TagString: Untagged
@@ -22976,7 +24867,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1480925182
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1480925178}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1489464597
 GameObject:
   m_ObjectHideFlags: 0
@@ -23116,6 +25024,7 @@ GameObject:
   - component: {fileID: 1490690994}
   - component: {fileID: 1490690995}
   - component: {fileID: 1490690996}
+  - component: {fileID: 1490690997}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -23161,7 +25070,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1490690997
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1490690993}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1493450410
 GameObject:
   m_ObjectHideFlags: 0
@@ -23732,6 +25658,7 @@ GameObject:
   - component: {fileID: 1525764997}
   - component: {fileID: 1525764998}
   - component: {fileID: 1525764999}
+  - component: {fileID: 1525765000}
   m_Layer: 0
   m_Name: dr1
   m_TagString: Untagged
@@ -23777,7 +25704,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1525765000
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1525764996}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1530009240
 GameObject:
   m_ObjectHideFlags: 0
@@ -23788,6 +25732,7 @@ GameObject:
   - component: {fileID: 1530009241}
   - component: {fileID: 1530009242}
   - component: {fileID: 1530009243}
+  - component: {fileID: 1530009244}
   m_Layer: 0
   m_Name: ur1
   m_TagString: Untagged
@@ -23833,7 +25778,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1530009244
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1530009240}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1531902018
 GameObject:
   m_ObjectHideFlags: 0
@@ -24320,6 +26282,7 @@ GameObject:
   - component: {fileID: 1561291513}
   - component: {fileID: 1561291514}
   - component: {fileID: 1561291515}
+  - component: {fileID: 1561291516}
   m_Layer: 0
   m_Name: ul
   m_TagString: Untagged
@@ -24365,7 +26328,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1561291516
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1561291512}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1561402006
 GameObject:
   m_ObjectHideFlags: 0
@@ -24533,6 +26513,7 @@ GameObject:
   - component: {fileID: 1565617481}
   - component: {fileID: 1565617482}
   - component: {fileID: 1565617483}
+  - component: {fileID: 1565617484}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -24578,7 +26559,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1565617484
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1565617480}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1571398351
 GameObject:
   m_ObjectHideFlags: 0
@@ -24589,6 +26587,7 @@ GameObject:
   - component: {fileID: 1571398352}
   - component: {fileID: 1571398353}
   - component: {fileID: 1571398354}
+  - component: {fileID: 1571398355}
   m_Layer: 0
   m_Name: dr
   m_TagString: Untagged
@@ -24634,7 +26633,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1571398355
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1571398351}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1582475357
 GameObject:
   m_ObjectHideFlags: 0
@@ -24645,6 +26661,7 @@ GameObject:
   - component: {fileID: 1582475358}
   - component: {fileID: 1582475359}
   - component: {fileID: 1582475360}
+  - component: {fileID: 1582475361}
   m_Layer: 0
   m_Name: dr
   m_TagString: Untagged
@@ -24690,7 +26707,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1582475361
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1582475357}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1582910634
 GameObject:
   m_ObjectHideFlags: 0
@@ -25444,6 +27478,7 @@ GameObject:
   - component: {fileID: 1627982988}
   - component: {fileID: 1627982989}
   - component: {fileID: 1627982990}
+  - component: {fileID: 1627982991}
   m_Layer: 0
   m_Name: dr1
   m_TagString: Untagged
@@ -25489,7 +27524,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1627982991
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1627982987}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1635597972
 GameObject:
   m_ObjectHideFlags: 0
@@ -25500,6 +27552,7 @@ GameObject:
   - component: {fileID: 1635597973}
   - component: {fileID: 1635597974}
   - component: {fileID: 1635597975}
+  - component: {fileID: 1635597976}
   m_Layer: 0
   m_Name: dl
   m_TagString: Untagged
@@ -25545,7 +27598,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1635597976
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1635597972}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1652638733
 Prefab:
   m_ObjectHideFlags: 0
@@ -25641,7 +27711,7 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 10
+  speed: 1
 --- !u!65 &1652638739
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25824,6 +27894,7 @@ GameObject:
   - component: {fileID: 1669708543}
   - component: {fileID: 1669708544}
   - component: {fileID: 1669708545}
+  - component: {fileID: 1669708546}
   m_Layer: 0
   m_Name: ur2
   m_TagString: Untagged
@@ -25869,7 +27940,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1669708546
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1669708542}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1672969838
 GameObject:
   m_ObjectHideFlags: 0
@@ -25880,6 +27968,7 @@ GameObject:
   - component: {fileID: 1672969839}
   - component: {fileID: 1672969840}
   - component: {fileID: 1672969841}
+  - component: {fileID: 1672969842}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -25925,7 +28014,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1672969842
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1672969838}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1676361575
 GameObject:
   m_ObjectHideFlags: 0
@@ -25936,6 +28042,7 @@ GameObject:
   - component: {fileID: 1676361576}
   - component: {fileID: 1676361577}
   - component: {fileID: 1676361578}
+  - component: {fileID: 1676361579}
   m_Layer: 0
   m_Name: r
   m_TagString: Untagged
@@ -25981,7 +28088,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1676361579
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1676361575}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1685857040
 GameObject:
   m_ObjectHideFlags: 0
@@ -26137,7 +28261,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: 1
-  m_TargetTexture: {fileID: 892680144}
+  m_TargetTexture: {fileID: 57309016}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -26157,6 +28281,7 @@ GameObject:
   - component: {fileID: 1698620082}
   - component: {fileID: 1698620083}
   - component: {fileID: 1698620084}
+  - component: {fileID: 1698620085}
   m_Layer: 0
   m_Name: dr2
   m_TagString: Untagged
@@ -26202,7 +28327,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1698620085
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1698620081}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1700645968
 GameObject:
   m_ObjectHideFlags: 0
@@ -26417,7 +28559,7 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 10
+  speed: 1
 --- !u!65 &1702648097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26430,6 +28572,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.01021282, y: 0.010212824, z: 0.015148672}
   m_Center: {x: 4.656613e-10, y: 0, z: 0.007666578}
+--- !u!84 &1705723364
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 808
+  m_Height: 454
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1706780807
 GameObject:
   m_ObjectHideFlags: 0
@@ -26440,6 +28613,7 @@ GameObject:
   - component: {fileID: 1706780808}
   - component: {fileID: 1706780809}
   - component: {fileID: 1706780810}
+  - component: {fileID: 1706780811}
   m_Layer: 0
   m_Name: dl
   m_TagString: Untagged
@@ -26485,7 +28659,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1706780811
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1706780807}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1710902070
 GameObject:
   m_ObjectHideFlags: 0
@@ -26496,6 +28687,7 @@ GameObject:
   - component: {fileID: 1710902071}
   - component: {fileID: 1710902072}
   - component: {fileID: 1710902073}
+  - component: {fileID: 1710902074}
   m_Layer: 0
   m_Name: dr1
   m_TagString: Untagged
@@ -26541,7 +28733,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1710902074
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710902070}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1713297416
 GameObject:
   m_ObjectHideFlags: 0
@@ -26649,6 +28858,7 @@ GameObject:
   - component: {fileID: 1713722992}
   - component: {fileID: 1713722993}
   - component: {fileID: 1713722994}
+  - component: {fileID: 1713722995}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -26694,38 +28904,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
---- !u!84 &1741842535
-RenderTexture:
+--- !u!54 &1713722995
+Rigidbody:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 808
-  m_Height: 454
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
+  m_GameObject: {fileID: 1713722991}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1743920283
 GameObject:
   m_ObjectHideFlags: 0
@@ -26941,6 +29137,7 @@ GameObject:
   - component: {fileID: 1767534634}
   - component: {fileID: 1767534635}
   - component: {fileID: 1767534636}
+  - component: {fileID: 1767534637}
   m_Layer: 0
   m_Name: dr
   m_TagString: Untagged
@@ -26986,7 +29183,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1767534637
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1767534633}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1773762447
 GameObject:
   m_ObjectHideFlags: 0
@@ -27025,6 +29239,7 @@ GameObject:
   - component: {fileID: 1774574882}
   - component: {fileID: 1774574883}
   - component: {fileID: 1774574884}
+  - component: {fileID: 1774574885}
   m_Layer: 0
   m_Name: dl
   m_TagString: Untagged
@@ -27070,7 +29285,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1774574885
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1774574881}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1774854648
 GameObject:
   m_ObjectHideFlags: 0
@@ -27234,6 +29466,7 @@ GameObject:
   - component: {fileID: 1784629249}
   - component: {fileID: 1784629250}
   - component: {fileID: 1784629251}
+  - component: {fileID: 1784629252}
   m_Layer: 0
   m_Name: l
   m_TagString: Untagged
@@ -27279,7 +29512,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1784629252
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1784629248}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1792452593
 GameObject:
   m_ObjectHideFlags: 0
@@ -27387,6 +29637,7 @@ GameObject:
   - component: {fileID: 1793894460}
   - component: {fileID: 1793894461}
   - component: {fileID: 1793894462}
+  - component: {fileID: 1793894463}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -27432,7 +29683,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1793894463
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1793894459}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1798062936
 GameObject:
   m_ObjectHideFlags: 0
@@ -27507,6 +29775,7 @@ GameObject:
   - component: {fileID: 1807408277}
   - component: {fileID: 1807408278}
   - component: {fileID: 1807408279}
+  - component: {fileID: 1807408280}
   m_Layer: 0
   m_Name: ur
   m_TagString: Untagged
@@ -27552,7 +29821,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1807408280
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1807408276}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1815826780
 GameObject:
   m_ObjectHideFlags: 0
@@ -27890,6 +30176,7 @@ GameObject:
   - component: {fileID: 1850121841}
   - component: {fileID: 1850121842}
   - component: {fileID: 1850121843}
+  - component: {fileID: 1850121844}
   m_Layer: 0
   m_Name: ul
   m_TagString: Untagged
@@ -27935,7 +30222,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1850121844
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1850121840}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1850696323
 GameObject:
   m_ObjectHideFlags: 0
@@ -27974,6 +30278,7 @@ GameObject:
   - component: {fileID: 1854282233}
   - component: {fileID: 1854282234}
   - component: {fileID: 1854282235}
+  - component: {fileID: 1854282236}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -28019,7 +30324,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1854282236
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1854282232}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1857333124
 GameObject:
   m_ObjectHideFlags: 0
@@ -28354,6 +30676,7 @@ GameObject:
   - component: {fileID: 1869848297}
   - component: {fileID: 1869848298}
   - component: {fileID: 1869848299}
+  - component: {fileID: 1869848300}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -28399,7 +30722,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1869848300
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1869848296}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1870637316
 GameObject:
   m_ObjectHideFlags: 0
@@ -28438,6 +30778,7 @@ GameObject:
   - component: {fileID: 1873502042}
   - component: {fileID: 1873502043}
   - component: {fileID: 1873502044}
+  - component: {fileID: 1873502045}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -28483,7 +30824,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1873502045
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1873502041}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1875076429
 GameObject:
   m_ObjectHideFlags: 0
@@ -29097,6 +31455,7 @@ GameObject:
   - component: {fileID: 1927353563}
   - component: {fileID: 1927353564}
   - component: {fileID: 1927353565}
+  - component: {fileID: 1927353566}
   m_Layer: 0
   m_Name: l
   m_TagString: Untagged
@@ -29142,7 +31501,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1927353566
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1927353562}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1937625846
 GameObject:
   m_ObjectHideFlags: 0
@@ -29153,6 +31529,7 @@ GameObject:
   - component: {fileID: 1937625847}
   - component: {fileID: 1937625848}
   - component: {fileID: 1937625849}
+  - component: {fileID: 1937625850}
   m_Layer: 0
   m_Name: r
   m_TagString: Untagged
@@ -29198,7 +31575,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &1937625850
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1937625846}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1938833796
 GameObject:
   m_ObjectHideFlags: 0
@@ -29544,7 +31938,7 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 10
+  speed: 1
 --- !u!65 &1970997750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29784,7 +32178,7 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 10
+  speed: 1
 --- !u!65 &1986176272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30266,6 +32660,7 @@ GameObject:
   - component: {fileID: 2017244855}
   - component: {fileID: 2017244856}
   - component: {fileID: 2017244857}
+  - component: {fileID: 2017244858}
   m_Layer: 0
   m_Name: dl2
   m_TagString: Untagged
@@ -30311,7 +32706,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &2017244858
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2017244854}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2022307741
 GameObject:
   m_ObjectHideFlags: 0
@@ -30384,6 +32796,7 @@ GameObject:
   - component: {fileID: 2022956489}
   - component: {fileID: 2022956490}
   - component: {fileID: 2022956491}
+  - component: {fileID: 2022956492}
   m_Layer: 0
   m_Name: dl1
   m_TagString: Untagged
@@ -30429,7 +32842,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &2022956492
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2022956488}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2027216523
 GameObject:
   m_ObjectHideFlags: 0
@@ -30499,6 +32929,7 @@ GameObject:
   - component: {fileID: 2046999124}
   - component: {fileID: 2046999125}
   - component: {fileID: 2046999126}
+  - component: {fileID: 2046999127}
   m_Layer: 0
   m_Name: ul
   m_TagString: Untagged
@@ -30544,7 +32975,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &2046999127
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2046999123}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2048008511
 GameObject:
   m_ObjectHideFlags: 0
@@ -30555,6 +33003,7 @@ GameObject:
   - component: {fileID: 2048008512}
   - component: {fileID: 2048008513}
   - component: {fileID: 2048008514}
+  - component: {fileID: 2048008515}
   m_Layer: 0
   m_Name: ur
   m_TagString: Untagged
@@ -30600,7 +33049,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &2048008515
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2048008511}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2053188023
 GameObject:
   m_ObjectHideFlags: 0
@@ -30611,6 +33077,7 @@ GameObject:
   - component: {fileID: 2053188024}
   - component: {fileID: 2053188025}
   - component: {fileID: 2053188026}
+  - component: {fileID: 2053188027}
   m_Layer: 0
   m_Name: ul1
   m_TagString: Untagged
@@ -30656,7 +33123,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &2053188027
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2053188023}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2055613681
 GameObject:
   m_ObjectHideFlags: 0
@@ -31174,6 +33658,7 @@ GameObject:
   - component: {fileID: 2075027187}
   - component: {fileID: 2075027188}
   - component: {fileID: 2075027189}
+  - component: {fileID: 2075027190}
   m_Layer: 0
   m_Name: dl1
   m_TagString: Untagged
@@ -31219,7 +33704,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &2075027190
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2075027186}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2078477175
 GameObject:
   m_ObjectHideFlags: 0
@@ -31327,6 +33829,7 @@ GameObject:
   - component: {fileID: 2093005080}
   - component: {fileID: 2093005081}
   - component: {fileID: 2093005082}
+  - component: {fileID: 2093005083}
   m_Layer: 0
   m_Name: ur
   m_TagString: Untagged
@@ -31372,7 +33875,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &2093005083
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2093005079}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2095498434
 GameObject:
   m_ObjectHideFlags: 0
@@ -31419,6 +33939,7 @@ GameObject:
   - component: {fileID: 2096867820}
   - component: {fileID: 2096867821}
   - component: {fileID: 2096867822}
+  - component: {fileID: 2096867823}
   m_Layer: 0
   m_Name: ur
   m_TagString: Untagged
@@ -31464,7 +33985,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &2096867823
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2096867819}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2100128012
 GameObject:
   m_ObjectHideFlags: 0
@@ -31644,6 +34182,7 @@ GameObject:
   - component: {fileID: 2130454113}
   - component: {fileID: 2130454114}
   - component: {fileID: 2130454115}
+  - component: {fileID: 2130454116}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -31689,7 +34228,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &2130454116
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2130454112}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2137155203
 GameObject:
   m_ObjectHideFlags: 0
@@ -31700,6 +34256,7 @@ GameObject:
   - component: {fileID: 2137155204}
   - component: {fileID: 2137155205}
   - component: {fileID: 2137155206}
+  - component: {fileID: 2137155207}
   m_Layer: 0
   m_Name: l
   m_TagString: Untagged
@@ -31745,7 +34302,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &2137155207
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137155203}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2143527051
 GameObject:
   m_ObjectHideFlags: 0
@@ -31784,6 +34358,7 @@ GameObject:
   - component: {fileID: 2144088266}
   - component: {fileID: 2144088267}
   - component: {fileID: 2144088268}
+  - component: {fileID: 2144088269}
   m_Layer: 0
   m_Name: ul1
   m_TagString: Untagged
@@ -31829,7 +34404,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
+  touchingAlly: 0
+  touchingEdge: 0
   available: 0
+--- !u!54 &2144088269
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2144088265}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2145280992
 GameObject:
   m_ObjectHideFlags: 0
