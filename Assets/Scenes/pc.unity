@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 6
+  direction: 5
 --- !u!65 &7780436
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &11581422
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -394,8 +394,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &13205362
 Rigidbody:
@@ -455,7 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 8
+  direction: 7
 --- !u!65 &15701825
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -552,7 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 4
+  direction: 3
 --- !u!65 &20547635
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -649,7 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 5
+  direction: 4
 --- !u!65 &22808436
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -746,7 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &34680906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -856,8 +854,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &36287239
 Rigidbody:
@@ -969,7 +965,8 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 0
+  speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &36688464
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1077,7 +1074,8 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 0
+  speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &39775248
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1133,7 +1131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &48074382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1279,6 +1277,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   movementValue: 0
   speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &48604466
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1291,37 +1290,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.016402196, y: 0.016402202, z: 0.02900337}
   m_Center: {x: 4.656613e-10, y: 0, z: 0.014633251}
---- !u!84 &57309016
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 808
-  m_Height: 454
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &62833269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,8 +1374,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &64450753
 Rigidbody:
@@ -1480,8 +1446,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &64810150
 Rigidbody:
@@ -1541,7 +1505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &68815731
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1690,7 +1654,8 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 0
+  speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &69355809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1782,7 +1747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 7
+  direction: 6
 --- !u!65 &76845353
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1892,8 +1857,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &78285116
 Rigidbody:
@@ -1953,7 +1916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &80830031
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2063,8 +2026,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &82262736
 Rigidbody:
@@ -2137,8 +2098,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &86061231
 Rigidbody:
@@ -2211,8 +2170,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &88483020
 Rigidbody:
@@ -2272,7 +2229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &92765072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2382,8 +2339,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &97659154
 Rigidbody:
@@ -2456,8 +2411,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &101410048
 Rigidbody:
@@ -2545,7 +2498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &104608643
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2702,7 +2655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &109493667
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2843,8 +2796,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &118356743
 Rigidbody:
@@ -2904,7 +2855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &124748732
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3001,7 +2952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &126688983
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3098,7 +3049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &131465383
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3231,7 +3182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &136245575
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3415,8 +3366,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &139833256
 Rigidbody:
@@ -3617,8 +3566,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &169524558
 Rigidbody:
@@ -3678,7 +3625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &170036807
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3775,7 +3722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 8
+  direction: 7
 --- !u!65 &170335998
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3971,7 +3918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &202374795
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4081,8 +4028,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &204170741
 Rigidbody:
@@ -4142,7 +4087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 4
+  direction: 3
 --- !u!65 &205714572
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4239,7 +4184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &208560658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4381,8 +4326,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &216858298
 Rigidbody:
@@ -4495,7 +4438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!1 &221196004
 GameObject:
   m_ObjectHideFlags: 0
@@ -4567,7 +4510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 6
+  direction: 5
 --- !u!65 &221363538
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4705,8 +4648,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &240485031
 Rigidbody:
@@ -4766,7 +4707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 4
+  direction: 3
 --- !u!65 &241024523
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4876,8 +4817,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &241681751
 Rigidbody:
@@ -4937,7 +4876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &242425847
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5070,7 +5009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 4
+  direction: 3
 --- !u!65 &253491233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5416,6 +5355,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   movementValue: 0
   speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &272510176
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5471,7 +5411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &279723754
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5604,7 +5544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &287112610
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5714,8 +5654,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &294873963
 Rigidbody:
@@ -5775,7 +5713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &298166632
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6128,8 +6066,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &329501980
 Rigidbody:
@@ -6189,7 +6125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 4
+  direction: 3
 --- !u!65 &334055919
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6314,7 +6250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &338283337
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6503,7 +6439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &345743665
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6600,7 +6536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 7
+  direction: 6
 --- !u!65 &348849589
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6697,7 +6633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &355448557
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6838,8 +6774,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &356706862
 Rigidbody:
@@ -6899,7 +6833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &357948831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6996,7 +6930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &367151087
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7280,8 +7214,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &384943137
 Rigidbody:
@@ -7394,6 +7326,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   movementValue: 0
   speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &386734925
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7462,8 +7395,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &387276222
 Rigidbody:
@@ -7523,7 +7454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &387933075
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7633,8 +7564,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &395016704
 Rigidbody:
@@ -7694,7 +7623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &404309491
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7985,8 +7914,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &445250578
 Rigidbody:
@@ -8059,8 +7986,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &446095072
 Rigidbody:
@@ -8133,8 +8058,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &448132336
 Rigidbody:
@@ -8194,7 +8117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &450571919
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8304,8 +8227,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &453684936
 Rigidbody:
@@ -8365,7 +8286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 5
+  direction: 4
 --- !u!65 &455608386
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8530,8 +8451,8 @@ MonoBehaviour:
   sourceCamera: {fileID: 459304754}
   outlineCamera: {fileID: 1689613445}
   outlineShaderMaterial: {fileID: 0}
-  renderTexture: {fileID: 57309016}
-  extraRenderTexture: {fileID: 1705723364}
+  renderTexture: {fileID: 545199300}
+  extraRenderTexture: {fileID: 510036175}
 --- !u!114 &459304757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8599,8 +8520,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &472134464
 Rigidbody:
@@ -8744,6 +8663,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   movementValue: 0
   speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &477288086
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8901,8 +8821,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &480575788
 Rigidbody:
@@ -8962,7 +8880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &494703381
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9087,7 +9005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &503818960
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9141,6 +9059,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 503818957}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &510036175
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 808
+  m_Height: 454
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &513184696
 GameObject:
   m_ObjectHideFlags: 0
@@ -9197,8 +9146,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &513184700
 Rigidbody:
@@ -9330,7 +9277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 7
+  direction: 6
 --- !u!65 &515396975
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9468,8 +9415,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &527330002
 Rigidbody:
@@ -9557,7 +9502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &539402411
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9639,6 +9584,37 @@ Transform:
   m_Father: {fileID: 341485218}
   m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!84 &545199300
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 808
+  m_Height: 454
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &549017408
 GameObject:
   m_ObjectHideFlags: 0
@@ -9682,7 +9658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &549017411
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9792,8 +9768,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &551904773
 Rigidbody:
@@ -9853,7 +9827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 8
+  direction: 7
 --- !u!65 &553773874
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10085,7 +10059,8 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 0
+  speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &570133118
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10154,8 +10129,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &572119046
 Rigidbody:
@@ -10256,8 +10229,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &585055651
 Rigidbody:
@@ -10330,8 +10301,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &586967758
 Rigidbody:
@@ -10422,7 +10391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &591145689
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10519,7 +10488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 4
+  direction: 3
 --- !u!65 &595920618
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10678,7 +10647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 4
+  direction: 3
 --- !u!65 &598938142
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10803,7 +10772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &618295980
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10900,7 +10869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &619441977
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10997,7 +10966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 6
+  direction: 5
 --- !u!65 &632303561
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11174,7 +11143,8 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 0
+  speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &638159627
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11243,8 +11213,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &653132518
 Rigidbody:
@@ -11317,8 +11285,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &660490799
 Rigidbody:
@@ -11378,7 +11344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &664202113
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11475,7 +11441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 4
+  direction: 3
 --- !u!65 &666912856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11585,8 +11551,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &672515411
 Rigidbody:
@@ -11691,8 +11655,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &679976377
 Rigidbody:
@@ -11752,7 +11714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &683207007
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11849,7 +11811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &688574737
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11959,8 +11921,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &699785477
 Rigidbody:
@@ -12033,8 +11993,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &701886421
 Rigidbody:
@@ -12147,7 +12105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!1 &708713522
 GameObject:
   m_ObjectHideFlags: 0
@@ -12191,7 +12149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &708713525
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12288,7 +12246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &718145928
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12426,8 +12384,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &721546011
 Rigidbody:
@@ -12515,7 +12471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &727407769
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12625,8 +12581,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &739586129
 Rigidbody:
@@ -12778,7 +12732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 8
+  direction: 7
 --- !u!65 &752944422
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12875,7 +12829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &752948849
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13000,7 +12954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &763447810
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13110,8 +13064,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &765954814
 Rigidbody:
@@ -13184,8 +13136,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &774736882
 Rigidbody:
@@ -13245,7 +13195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &784030353
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13383,8 +13333,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &793714890
 Rigidbody:
@@ -13472,7 +13420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &817044520
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13614,8 +13562,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &835725192
 Rigidbody:
@@ -13688,8 +13634,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &842288579
 Rigidbody:
@@ -13802,6 +13746,7 @@ MonoBehaviour:
   arrows: {fileID: 1465130409}
   movementValue: 0
   speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &845911873
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13870,8 +13815,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &853588000
 Rigidbody:
@@ -13944,8 +13887,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &858164103
 Rigidbody:
@@ -14018,8 +13959,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &859373983
 Rigidbody:
@@ -14092,8 +14031,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &861483504
 Rigidbody:
@@ -14166,8 +14103,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &867727344
 Rigidbody:
@@ -14227,7 +14162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 6
+  direction: 5
 --- !u!65 &873585329
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14337,8 +14272,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &887328333
 Rigidbody:
@@ -14411,8 +14344,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &887861582
 Rigidbody:
@@ -14485,8 +14416,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &890655319
 Rigidbody:
@@ -14546,7 +14475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &893543114
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14656,8 +14585,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &896465171
 Rigidbody:
@@ -14766,8 +14693,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &911963986
 Rigidbody:
@@ -14840,8 +14765,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &917139778
 Rigidbody:
@@ -14914,8 +14837,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &920592768
 Rigidbody:
@@ -14975,7 +14896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &923837543
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15100,7 +15021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 6
+  direction: 5
 --- !u!65 &937008246
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15197,7 +15118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &942418736
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15377,7 +15298,8 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 0
+  speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &945492592
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15514,6 +15436,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   movementValue: 0
   speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &945793033
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15582,8 +15505,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &946381952
 Rigidbody:
@@ -15692,6 +15613,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   movementValue: 0
   speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &950468847
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15778,7 +15700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &954093333
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15875,7 +15797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &958793916
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15985,8 +15907,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &958964010
 Rigidbody:
@@ -16059,8 +15979,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &959279558
 Rigidbody:
@@ -16133,8 +16051,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &963559592
 Rigidbody:
@@ -16194,7 +16110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &964499076
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16304,8 +16220,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &969522413
 Rigidbody:
@@ -16418,6 +16332,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   movementValue: 0
   speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &974435557
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16525,7 +16440,8 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 0
+  speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &976224766
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16594,8 +16510,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &978437273
 Rigidbody:
@@ -16668,8 +16582,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &981567433
 Rigidbody:
@@ -16742,8 +16654,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &997877959
 Rigidbody:
@@ -16816,8 +16726,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &999231407
 Rigidbody:
@@ -16877,7 +16785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 4
+  direction: 3
 --- !u!65 &1006170495
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17002,7 +16910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 7
+  direction: 6
 --- !u!65 &1019498635
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17099,7 +17007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &1032339006
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17245,8 +17153,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1037840283
 Rigidbody:
@@ -17319,8 +17225,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1039723905
 Rigidbody:
@@ -17393,8 +17297,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1044280841
 Rigidbody:
@@ -17630,8 +17532,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1048280962
 Rigidbody:
@@ -17704,8 +17604,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1049295392
 Rigidbody:
@@ -17817,7 +17715,8 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 0
+  speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &1051365712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17873,7 +17772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &1062005992
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17970,7 +17869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &1070119939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18080,8 +17979,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1077707578
 Rigidbody:
@@ -18141,7 +18038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &1078253485
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18251,8 +18148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1080353804
 Rigidbody:
@@ -18325,8 +18220,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1080769808
 Rigidbody:
@@ -18386,7 +18279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 6
+  direction: 5
 --- !u!65 &1080819848
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18483,7 +18376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 5
+  direction: 4
 --- !u!65 &1086944305
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18608,7 +18501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 7
+  direction: 6
 --- !u!65 &1091696665
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18824,6 +18717,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   movementValue: 0
   speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &1124398901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18892,8 +18786,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1126877789
 Rigidbody:
@@ -18966,8 +18858,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1133728438
 Rigidbody:
@@ -19114,7 +19004,8 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 0
+  speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &1140816663
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19170,7 +19061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 4
+  direction: 3
 --- !u!65 &1141480185
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19267,7 +19158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &1141997057
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19416,7 +19307,8 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 0
+  speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &1142557341
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19513,8 +19405,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1160279027
 Rigidbody:
@@ -19792,8 +19682,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1196081554
 Rigidbody:
@@ -19866,8 +19754,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1196102405
 Rigidbody:
@@ -19940,8 +19826,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1196335860
 Rigidbody:
@@ -20001,7 +19885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 8
+  direction: 7
 --- !u!65 &1197672395
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20305,8 +20189,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1210242846
 Rigidbody:
@@ -20379,8 +20261,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1210436837
 Rigidbody:
@@ -20453,8 +20333,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1230098936
 Rigidbody:
@@ -20545,7 +20423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &1234671147
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20655,8 +20533,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1236363670
 Rigidbody:
@@ -20729,8 +20605,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1244627151
 Rigidbody:
@@ -20790,7 +20664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &1245059153
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20900,8 +20774,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1250314193
 Rigidbody:
@@ -20961,7 +20833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &1254053827
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21099,8 +20971,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1258321161
 Rigidbody:
@@ -21173,8 +21043,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1265800455
 Rigidbody:
@@ -21287,7 +21155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 4
+  direction: 3
 --- !u!1001 &1267361336
 Prefab:
   m_ObjectHideFlags: 0
@@ -21379,7 +21247,8 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 0
+  speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &1267361340
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21448,8 +21317,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1271870393
 Rigidbody:
@@ -21537,7 +21404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 6
+  direction: 5
 --- !u!65 &1274751309
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21634,7 +21501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &1278688260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21744,8 +21611,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1281835725
 Rigidbody:
@@ -21836,7 +21701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &1298201456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22052,7 +21917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 7
+  direction: 6
 --- !u!65 &1314735433
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22149,7 +22014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &1315069294
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22246,7 +22111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &1324773953
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22384,8 +22249,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1329956333
 Rigidbody:
@@ -22458,8 +22321,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1336238563
 Rigidbody:
@@ -22519,7 +22380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &1338169363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22616,7 +22477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 7
+  direction: 6
 --- !u!65 &1352817668
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22766,6 +22627,7 @@ MonoBehaviour:
   arrows: {fileID: 184917855}
   movementValue: 0
   speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &1369588472
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22834,8 +22696,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1369672029
 Rigidbody:
@@ -22948,6 +22808,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   movementValue: 0
   speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &1371680399
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23016,8 +22877,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1382932793
 Rigidbody:
@@ -23150,8 +23009,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1390691158
 Rigidbody:
@@ -23257,7 +23114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &1397829218
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23367,8 +23224,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1401188906
 Rigidbody:
@@ -23484,7 +23339,8 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 0
+  speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &1401749554
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23540,7 +23396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &1406093018
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23690,6 +23546,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   movementValue: 0
   speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &1409603892
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23758,8 +23615,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1412771929
 Rigidbody:
@@ -23986,7 +23841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 4
+  direction: 3
 --- !u!65 &1434521239
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24096,8 +23951,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1436743597
 Rigidbody:
@@ -24170,8 +24023,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1436990478
 Rigidbody:
@@ -24244,8 +24095,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1441825827
 Rigidbody:
@@ -24357,7 +24206,8 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 0
+  speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &1443333010
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24413,7 +24263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &1444301435
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24510,7 +24360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &1446814320
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24620,8 +24470,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1455170766
 Rigidbody:
@@ -24757,8 +24605,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1468583174
 Rigidbody:
@@ -24867,8 +24713,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1480925182
 Rigidbody:
@@ -24928,7 +24772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 8
+  direction: 7
 --- !u!65 &1489464600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25070,8 +24914,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1490690997
 Rigidbody:
@@ -25162,7 +25004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &1498044802
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25315,7 +25157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 5
+  direction: 4
 --- !u!65 &1501740483
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25635,7 +25477,8 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 0
+  speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &1523398552
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25704,8 +25547,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1525765000
 Rigidbody:
@@ -25778,8 +25619,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1530009244
 Rigidbody:
@@ -25867,7 +25706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &1535258165
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26024,7 +25863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &1549067230
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26121,7 +25960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &1554480562
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26218,7 +26057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &1559559822
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26328,8 +26167,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1561291516
 Rigidbody:
@@ -26389,7 +26226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &1561402009
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26559,8 +26396,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1565617484
 Rigidbody:
@@ -26633,8 +26468,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1571398355
 Rigidbody:
@@ -26707,8 +26540,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1582475361
 Rigidbody:
@@ -26768,7 +26599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 5
+  direction: 4
 --- !u!65 &1582910637
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26865,7 +26696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 4
+  direction: 3
 --- !u!65 &1583222232
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26962,7 +26793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &1596444508
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27059,7 +26890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &1598236857
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27220,7 +27051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &1619830101
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27317,7 +27148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &1621613244
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27414,7 +27245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 5
+  direction: 4
 --- !u!65 &1625641943
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27524,8 +27355,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1627982991
 Rigidbody:
@@ -27598,8 +27427,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1635597976
 Rigidbody:
@@ -27712,6 +27539,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   movementValue: 0
   speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &1652638739
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27876,7 +27704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!33 &1668326310
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -27940,8 +27768,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1669708546
 Rigidbody:
@@ -28014,8 +27840,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1672969842
 Rigidbody:
@@ -28088,8 +27912,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1676361579
 Rigidbody:
@@ -28261,7 +28083,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: 1
-  m_TargetTexture: {fileID: 57309016}
+  m_TargetTexture: {fileID: 545199300}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -28327,8 +28149,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1698620085
 Rigidbody:
@@ -28560,6 +28380,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   movementValue: 0
   speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &1702648097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28572,37 +28393,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.01021282, y: 0.010212824, z: 0.015148672}
   m_Center: {x: 4.656613e-10, y: 0, z: 0.007666578}
---- !u!84 &1705723364
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 808
-  m_Height: 454
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1706780807
 GameObject:
   m_ObjectHideFlags: 0
@@ -28659,8 +28449,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1706780811
 Rigidbody:
@@ -28733,8 +28521,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1710902074
 Rigidbody:
@@ -28794,7 +28580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &1713297419
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28904,8 +28690,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1713722995
 Rigidbody:
@@ -28965,7 +28749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &1743920286
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29114,7 +28898,8 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 0
+  speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &1751454648
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29183,8 +28968,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1767534637
 Rigidbody:
@@ -29285,8 +29068,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1774574885
 Rigidbody:
@@ -29402,7 +29183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 4
+  direction: 3
 --- !u!65 &1782970050
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29512,8 +29293,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1784629252
 Rigidbody:
@@ -29573,7 +29352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &1792452596
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29683,8 +29462,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1793894463
 Rigidbody:
@@ -29821,8 +29598,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1807408280
 Rigidbody:
@@ -29882,7 +29657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 4
+  direction: 3
 --- !u!65 &1815826783
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29979,7 +29754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &1830832038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30112,7 +29887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &1842025062
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30222,8 +29997,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1850121844
 Rigidbody:
@@ -30324,8 +30097,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1854282236
 Rigidbody:
@@ -30484,7 +30255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 7
+  direction: 6
 --- !u!65 &1863554038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30722,8 +30493,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1869848300
 Rigidbody:
@@ -30824,8 +30593,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1873502045
 Rigidbody:
@@ -30885,7 +30652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 5
+  direction: 4
 --- !u!65 &1875076432
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31038,7 +30805,8 @@ MonoBehaviour:
   dirs: []
   arrows: {fileID: 0}
   movementValue: 0
-  speed: 0
+  speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &1883083547
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31094,7 +30862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 8
+  direction: 7
 --- !u!65 &1896151410
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31191,7 +30959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &1898448356
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31391,7 +31159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &1909985472
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31501,8 +31269,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1927353566
 Rigidbody:
@@ -31575,8 +31341,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &1937625850
 Rigidbody:
@@ -31636,7 +31400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 8
+  direction: 7
 --- !u!65 &1938833799
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31761,7 +31525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &1958240137
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31939,6 +31703,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   movementValue: 0
   speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &1970997750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32025,7 +31790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &1975302310
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32179,6 +31944,7 @@ MonoBehaviour:
   arrows: {fileID: 0}
   movementValue: 0
   speed: 1
+  targetTile: {fileID: 0}
 --- !u!65 &1986176272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32262,7 +32028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &1988293712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32359,7 +32125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 4
+  direction: 3
 --- !u!65 &2005114181
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32456,7 +32222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &2005590982
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32706,8 +32472,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &2017244858
 Rigidbody:
@@ -32842,8 +32606,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &2022956492
 Rigidbody:
@@ -32975,8 +32737,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &2046999127
 Rigidbody:
@@ -33049,8 +32809,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &2048008515
 Rigidbody:
@@ -33123,8 +32881,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &2053188027
 Rigidbody:
@@ -33243,7 +32999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 6
+  direction: 5
 --- !u!65 &2063083275
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33400,7 +33156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &2070818137
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33497,7 +33253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 5
+  direction: 4
 --- !u!65 &2071452233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33594,7 +33350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &2072398059
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33704,8 +33460,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &2075027190
 Rigidbody:
@@ -33765,7 +33519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 3
+  direction: 2
 --- !u!65 &2078477178
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33875,8 +33629,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &2093005083
 Rigidbody:
@@ -33985,8 +33737,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &2096867823
 Rigidbody:
@@ -34046,7 +33796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
+  direction: 0
 --- !u!65 &2100128015
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34228,8 +33978,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &2130454116
 Rigidbody:
@@ -34302,8 +34050,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &2137155207
 Rigidbody:
@@ -34404,8 +34150,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
-  touchingAlly: 0
-  touchingEdge: 0
   available: 0
 --- !u!54 &2144088269
 Rigidbody:
@@ -34465,7 +34209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b0cf906843d374ca34fabfb8b1e971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 2
+  direction: 1
 --- !u!65 &2145280995
 BoxCollider:
   m_ObjectHideFlags: 0

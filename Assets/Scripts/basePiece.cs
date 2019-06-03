@@ -18,7 +18,7 @@ public class basePiece : MonoBehaviour
     public int movementValue;
     public float speed;
 
-    private Transform targetTile;
+    public Transform targetTile;
 
 	void Start ()
     {
@@ -52,13 +52,19 @@ public class basePiece : MonoBehaviour
     {
         if (movementValue > 0)
         {
-            float d = Vector2.Distance(transform.position, targetTile.position);
+            Vector3 moveTo = new Vector3(targetTile.position.x, transform.position.y, targetTile.transform.position.z);
+            float d = Vector3.Distance(transform.position, moveTo);
             if (d < float.Epsilon)
                 SetMovement();
 
-            transform.position = Vector2.MoveTowards(transform.position, targetTile.position, Time.deltaTime * speed);
+            transform.position = Vector3.MoveTowards(transform.position, moveTo, Time.deltaTime * speed);
 
-            Debug.DrawLine(transform.position, targetTile.position);
+            Debug.DrawLine(transform.position, moveTo, Color.red);
+        }
+        else
+        {
+            if (GetComponent<Outline>() != null)
+                Destroy(GetComponent<Outline>());
         }
 	}
 
@@ -76,7 +82,7 @@ public class basePiece : MonoBehaviour
         }
     }
 
-    private void SetMovement()
+    public void SetMovement()
     {
         if (dirs[direction].GetComponent<checkAvailability>().available)
         {

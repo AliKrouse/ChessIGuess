@@ -64,6 +64,7 @@ public class dieRoller : MonoBehaviour
         yield return new WaitForSeconds(2);
         isActive = false;
         yield return new WaitForSeconds(1);
+        currentPiece.SetMovement();
         currentPiece.movementValue = value;
     }
 }

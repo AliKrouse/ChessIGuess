@@ -14,6 +14,8 @@ public class directionArrows : MonoBehaviour
         bp = transform.parent.transform.parent.gameObject.GetComponent<basePiece>();
 
         dr = FindObjectOfType<dieRoller>();
+
+        direction = transform.GetSiblingIndex();
 	}
 
     private void OnMouseDown()
