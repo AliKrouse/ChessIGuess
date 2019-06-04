@@ -20,7 +20,7 @@ public class basePiece : MonoBehaviour
 
     public Transform targetTile;
 
-    private turnController tc;
+    protected turnController tc;
 
 	void Start ()
     {
@@ -62,8 +62,6 @@ public class basePiece : MonoBehaviour
                 SetMovement(movementValue);
 
             transform.position = Vector3.MoveTowards(transform.position, moveTo, Time.deltaTime * speed);
-
-            Debug.DrawLine(transform.position, moveTo, Color.red);
         }
 	}
 
@@ -81,7 +79,7 @@ public class basePiece : MonoBehaviour
         }
     }
 
-    public void SetMovement(int value)
+    public virtual void SetMovement(int value)
     {
         movementValue = value;
 

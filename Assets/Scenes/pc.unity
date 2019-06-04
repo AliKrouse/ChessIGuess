@@ -8451,8 +8451,8 @@ MonoBehaviour:
   sourceCamera: {fileID: 459304754}
   outlineCamera: {fileID: 1689613445}
   outlineShaderMaterial: {fileID: 0}
-  renderTexture: {fileID: 686961077}
-  extraRenderTexture: {fileID: 669459915}
+  renderTexture: {fileID: 628585131}
+  extraRenderTexture: {fileID: 1066122694}
 --- !u!114 &459304757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10861,6 +10861,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 619441974}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &628585131
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 808
+  m_Height: 454
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &632303558
 GameObject:
   m_ObjectHideFlags: 0
@@ -11433,37 +11464,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 666912853}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!84 &669459915
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 808
-  m_Height: 454
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &672515407
 GameObject:
   m_ObjectHideFlags: 0
@@ -11737,37 +11737,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 683207004}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!84 &686961077
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 808
-  m_Height: 454
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &688574734
 GameObject:
   m_ObjectHideFlags: 0
@@ -17826,6 +17795,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1062005989}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &1066122694
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 808
+  m_Height: 454
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1070119936
 GameObject:
   m_ObjectHideFlags: 0
@@ -18707,17 +18707,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1124398897}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b01cdd69234edcd40bb42e0a8e1498da, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ec0705980dcc02488d7c3ed6bd43716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   die: 0
   strengthMod: 2
   direction: 0
   dirs: []
-  arrows: {fileID: 0}
+  arrows: {fileID: 515365875}
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  extraJump: 0
 --- !u!65 &1124398901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18995,17 +18996,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1140816661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b01cdd69234edcd40bb42e0a8e1498da, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ec0705980dcc02488d7c3ed6bd43716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   die: 0
   strengthMod: 2
   direction: 0
   dirs: []
-  arrows: {fileID: 0}
+  arrows: {fileID: 2013844938}
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  extraJump: 0
 --- !u!65 &1140816663
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23058,6 +23060,7 @@ MonoBehaviour:
   wPieces: []
   bPieces: []
   whiteTurn: 0
+  coroutineIsRunning: 0
 --- !u!4 &1392929614
 Transform:
   m_ObjectHideFlags: 0
@@ -23330,17 +23333,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1401749552}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b01cdd69234edcd40bb42e0a8e1498da, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ec0705980dcc02488d7c3ed6bd43716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   die: 0
   strengthMod: 2
   direction: 0
   dirs: []
-  arrows: {fileID: 0}
+  arrows: {fileID: 1468711994}
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  extraJump: 0
 --- !u!65 &1401749554
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28083,7 +28087,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: 1
-  m_TargetTexture: {fileID: 686961077}
+  m_TargetTexture: {fileID: 628585131}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -31934,17 +31938,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1986176268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b01cdd69234edcd40bb42e0a8e1498da, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ec0705980dcc02488d7c3ed6bd43716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   die: 0
   strengthMod: 2
   direction: 0
   dirs: []
-  arrows: {fileID: 0}
+  arrows: {fileID: 248535468}
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  extraJump: 0
 --- !u!65 &1986176272
 BoxCollider:
   m_ObjectHideFlags: 0
