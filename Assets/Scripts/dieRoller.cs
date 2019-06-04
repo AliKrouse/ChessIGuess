@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using InnerDriveStudios.DiceCreator;
 
 public class dieRoller : MonoBehaviour
@@ -21,11 +22,18 @@ public class dieRoller : MonoBehaviour
 
     public basePiece currentPiece;
 
+    public Text result, clash1, clash2;
+    public GameObject vs;
+
+    private turnController tc;
+
     void Start ()
     {
         wPieces = GameObject.FindGameObjectsWithTag("White");
         bPieces = GameObject.FindGameObjectsWithTag("Black");
         button = transform.GetChild(4).gameObject;
+
+        tc = GameObject.FindGameObjectWithTag("GameController").GetComponent<turnController>();
     }
 	
 	void Update ()
@@ -59,9 +67,20 @@ public class dieRoller : MonoBehaviour
 
     private IEnumerator CheckForDieSide()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
         int value = d.GetComponent<DieSides>().GetDieSideMatchInfo().closestMatch.values[0];
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1f);
+
+        Destroy(d.gameObject);
+        result.text = value.ToString();
+        if (tc.whiteTurn)
+            result.color = Color.white;
+        else
+            result.color = Color.black;
+        result.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(1);
+        result.gameObject.SetActive(false);
         isActive = false;
         yield return new WaitForSeconds(1);
         currentPiece.SetMovement(value + 1);

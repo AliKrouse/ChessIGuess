@@ -44,9 +44,10 @@ public class knightMovement : basePiece
                 Debug.Log(targetTile);
 
                 movementValue--;
+                extraJump = false;
             }
 
-            if (movementValue <= 0 || (movementValue == 1 && extraJump))
+            if (movementValue <= 0)
             {
                 if (GetComponent<Outline>() != null)
                     Destroy(GetComponent<Outline>());
