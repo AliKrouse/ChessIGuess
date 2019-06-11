@@ -12,6 +12,7 @@ public class turnController : MonoBehaviour
     private dieRoller dr;
 
     public bool coroutineIsRunning;
+    private bool movingPiece;
     
 	void Start ()
     {
@@ -25,6 +26,9 @@ public class turnController : MonoBehaviour
 	void Update ()
     {
         if (dr.isActive)
+            movingPiece = true;
+
+        if (movingPiece)
         {
             foreach (GameObject g in bPieces)
                 g.GetComponent<basePiece>().canBeClicked = false;
@@ -73,6 +77,7 @@ public class turnController : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         whiteTurn = !whiteTurn;
+        movingPiece = false;
 
         coroutineIsRunning = false;
     }
