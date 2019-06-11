@@ -7,8 +7,9 @@ public class checkAvailability : MonoBehaviour
     public string alliedTag, enemyTag;
     protected GameObject arrow;
 
-    protected bool touchingAlly, touchingEdge, touchingEnemy;
+    protected bool touchingAlly, touchingEdge;
     public bool available;
+    public bool touchingEnemy;
 
     private GameObject[] tiles;
     
@@ -35,6 +36,11 @@ public class checkAvailability : MonoBehaviour
             touchingEdge = true;
         if (other.CompareTag(alliedTag))
             touchingAlly = true;
+        if (other.CompareTag(enemyTag))
+        {
+            touchingEnemy = true;
+            //Debug.Log(name + " is touching " + other.name);
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -43,6 +49,8 @@ public class checkAvailability : MonoBehaviour
             touchingEdge = false;
         if (other.CompareTag(alliedTag))
             touchingAlly = false;
+        if (other.CompareTag(enemyTag))
+            touchingEnemy = false;
     }
 
     public Transform NearestTile()

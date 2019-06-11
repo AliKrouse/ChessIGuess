@@ -22,6 +22,10 @@ public class basePiece : MonoBehaviour
 
     protected turnController tc;
 
+    private float timer;
+
+    public bool canBeClicked;
+
 	void Start ()
     {
         allies.AddRange(GameObject.FindGameObjectsWithTag(this.tag));
@@ -56,10 +60,15 @@ public class basePiece : MonoBehaviour
     {
         if (movementValue > 0)
         {
+            timer += Time.deltaTime;
             Vector3 moveTo = new Vector3(targetTile.position.x, transform.position.y, targetTile.transform.position.z);
             float d = Vector3.Distance(transform.position, moveTo);
             if (d < float.Epsilon)
+            {
                 SetMovement(movementValue);
+                //Debug.Log("Took " + timer + " seconds to move");
+                timer = 0;
+            }
 
             transform.position = Vector3.MoveTowards(transform.position, moveTo, Time.deltaTime * speed);
         }
@@ -67,15 +76,18 @@ public class basePiece : MonoBehaviour
 
     private void OnMouseDown()
     {
-        gameObject.AddComponent<Outline>();
-        arrows.SetActive(true);
-
-        foreach (GameObject g in allies)
+        if (canBeClicked)
         {
-            if (g.GetComponent<Outline>() != null)
-                Destroy(g.GetComponent<Outline>());
+            gameObject.AddComponent<Outline>();
+            arrows.SetActive(true);
 
-            g.GetComponent<basePiece>().arrows.SetActive(false);
+            foreach (GameObject g in allies)
+            {
+                if (g.GetComponent<Outline>() != null)
+                    Destroy(g.GetComponent<Outline>());
+
+                g.GetComponent<basePiece>().arrows.SetActive(false);
+            }
         }
     }
 
@@ -85,15 +97,28 @@ public class basePiece : MonoBehaviour
 
         if (dirs[direction].GetComponent<checkAvailability>().available)
         {
-            targetTile = dirs[direction].GetComponent<checkAvailability>().NearestTile();
-            movementValue--;
-
-            if (movementValue <= 0)
+            if (dirs[direction].GetComponent<checkAvailability>().touchingEnemy)
             {
-                if (GetComponent<Outline>() != null)
-                    Destroy(GetComponent<Outline>());
-                if (!tc.coroutineIsRunning)
-                    tc.StartCoroutine(tc.SwitchTurns());
+                //Debug.Log("will collide with enemy piece");
+                movementValue = 0;
+
+                //if (GetComponent<Outline>() != null)
+                //    Destroy(GetComponent<Outline>());
+                //if (!tc.coroutineIsRunning)
+                //    tc.StartCoroutine(tc.SwitchTurns());
+            }
+            else
+            {
+                targetTile = dirs[direction].GetComponent<checkAvailability>().NearestTile();
+                movementValue--;
+
+                if (movementValue <= 0)
+                {
+                    if (GetComponent<Outline>() != null)
+                        Destroy(GetComponent<Outline>());
+                    if (!tc.coroutineIsRunning)
+                        tc.StartCoroutine(tc.SwitchTurns());
+                }
             }
         }
         else

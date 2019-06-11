@@ -27,18 +27,22 @@ public class turnController : MonoBehaviour
         if (dr.isActive)
         {
             foreach (GameObject g in bPieces)
-                g.GetComponent<Collider>().enabled = false;
+                g.GetComponent<basePiece>().canBeClicked = false;
+                //g.GetComponent<Collider>().enabled = false;
             foreach (GameObject g in wPieces)
-                g.GetComponent<Collider>().enabled = false;
+                g.GetComponent<basePiece>().canBeClicked = false;
+                //g.GetComponent<Collider>().enabled = false;
         }
         else
         {
             if (whiteTurn)
             {
                 foreach (GameObject g in bPieces)
-                    g.GetComponent<Collider>().enabled = false;
+                    g.GetComponent<basePiece>().canBeClicked = false;
+                    //g.GetComponent<Collider>().enabled = false;
                 foreach (GameObject g in wPieces)
-                    g.GetComponent<Collider>().enabled = true;
+                    g.GetComponent<basePiece>().canBeClicked = true;
+                    //g.GetComponent<Collider>().enabled = true;
 
                 wTurn.SetActive(true);
                 bTurn.SetActive(false);
@@ -48,9 +52,11 @@ public class turnController : MonoBehaviour
             if (!whiteTurn)
             {
                 foreach (GameObject g in wPieces)
-                    g.GetComponent<Collider>().enabled = false;
+                    g.GetComponent<basePiece>().canBeClicked = false;
+                    //g.GetComponent<Collider>().enabled = false;
                 foreach (GameObject g in bPieces)
-                    g.GetComponent<Collider>().enabled = true;
+                    g.GetComponent<basePiece>().canBeClicked = true;
+                    //g.GetComponent<Collider>().enabled = true;
 
                 bTurn.SetActive(true);
                 wTurn.SetActive(false);
@@ -62,7 +68,7 @@ public class turnController : MonoBehaviour
 
     public IEnumerator SwitchTurns()
     {
-        Debug.Log("switching");
+        //Debug.Log("switching");
         coroutineIsRunning = true;
         yield return new WaitForSeconds(1);
 
