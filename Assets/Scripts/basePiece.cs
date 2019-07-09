@@ -109,11 +109,12 @@ public class basePiece : MonoBehaviour
             foreach (GameObject g in allies)
             {
                 if (g != null)
+                {
                     if (g.GetComponent<Outline>() != null)
-                        if (g != null)
-                            Destroy(g.GetComponent<Outline>());
+                        Destroy(g.GetComponent<Outline>());
 
-                g.GetComponent<basePiece>().arrows.SetActive(false);
+                    g.GetComponent<basePiece>().arrows.SetActive(false);
+                }
             }
         }
     }
@@ -142,7 +143,6 @@ public class basePiece : MonoBehaviour
                 cc.playerPiece = this;
                 cc.enemyPiece = dirs[direction].GetComponent<checkAvailability>().enemyPiece.GetComponent<basePiece>();
                 isClashing = true;
-                //movementValue = 0;
                 cc.EnterClash();
             }
             else

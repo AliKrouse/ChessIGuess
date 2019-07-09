@@ -13,6 +13,8 @@ public class turnController : MonoBehaviour
 
     public bool coroutineIsRunning;
     private bool movingPiece;
+
+    private pawnPiece[] pawns;
     
 	void Start ()
     {
@@ -21,6 +23,8 @@ public class turnController : MonoBehaviour
         bPieces = GameObject.FindGameObjectsWithTag("Black");
 
         dr = FindObjectOfType<dieRoller>();
+
+        pawns = FindObjectsOfType<pawnPiece>();
     }
 	
 	void Update ()
@@ -41,6 +45,8 @@ public class turnController : MonoBehaviour
         {
             if (whiteTurn)
             {
+                wPieces = GameObject.FindGameObjectsWithTag("White");
+
                 foreach (GameObject g in bPieces)
                     if (g != null)
                         g.GetComponent<basePiece>().canBeClicked = false;
@@ -55,6 +61,8 @@ public class turnController : MonoBehaviour
             }
             if (!whiteTurn)
             {
+                bPieces = GameObject.FindGameObjectsWithTag("Black");
+
                 foreach (GameObject g in wPieces)
                     if (g != null)
                         g.GetComponent<basePiece>().canBeClicked = false;
@@ -80,5 +88,9 @@ public class turnController : MonoBehaviour
         movingPiece = false;
 
         coroutineIsRunning = false;
+
+        foreach (pawnPiece p in pawns)
+            if (p != null)
+                p.CheckPosition();
     }
 }

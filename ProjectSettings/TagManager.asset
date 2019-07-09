@@ -10,6 +10,7 @@ TagManager:
   - Arrow
   - Roller
   - Edge
+  - End zone
   layers:
   - Default
   - TransparentFX
