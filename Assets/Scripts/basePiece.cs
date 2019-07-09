@@ -21,10 +21,16 @@ public class basePiece : MonoBehaviour
     public Transform targetTile;
 
     protected turnController tc;
+    protected clashController cc;
 
     private float timer;
 
     public bool canBeClicked;
+
+    private dieRoller dr;
+    public string pieceColor;
+
+    public bool isClashing;
 
 	void Start ()
     {
@@ -53,12 +59,31 @@ public class basePiece : MonoBehaviour
         }
         targetTile = tiles[closestIndex].transform;
 
-        tc = GameObject.FindGameObjectWithTag("GameController").GetComponent<turnController>();
-	}
+        tc = FindObjectOfType<turnController>();
+        cc = FindObjectOfType<clashController>();
+
+        dr = FindObjectOfType<dieRoller>();
+    }
+
+    public Transform CurrentTile()
+    {
+        GameObject[] tiles = GameObject.FindGameObjectsWithTag("Tile");
+        int closestIndex = 0;
+        float closestDistance = 100;
+        for (int i = 0; i < tiles.Length; i++)
+        {
+            if (Vector3.Distance(transform.position, tiles[i].transform.position) < closestDistance)
+            {
+                closestDistance = Vector3.Distance(transform.position, tiles[i].transform.position);
+                closestIndex = i;
+            }
+        }
+        return tiles[closestIndex].transform;
+    }
 	
 	void Update ()
     {
-        if (movementValue > 0)
+        if (movementValue > 0 && !isClashing)
         {
             timer += Time.deltaTime;
             Vector3 moveTo = new Vector3(targetTile.position.x, transform.position.y, targetTile.transform.position.z);
@@ -83,8 +108,10 @@ public class basePiece : MonoBehaviour
 
             foreach (GameObject g in allies)
             {
-                if (g.GetComponent<Outline>() != null)
-                    Destroy(g.GetComponent<Outline>());
+                if (g != null)
+                    if (g.GetComponent<Outline>() != null)
+                        if (g != null)
+                            Destroy(g.GetComponent<Outline>());
 
                 g.GetComponent<basePiece>().arrows.SetActive(false);
             }
@@ -97,15 +124,26 @@ public class basePiece : MonoBehaviour
 
         if (dirs[direction].GetComponent<checkAvailability>().available)
         {
-            if (dirs[direction].GetComponent<checkAvailability>().touchingEnemy)
+            if (dirs[direction].GetComponent<checkAvailability>().touchingEnemy && movementValue > 1)
             {
-                //Debug.Log("will collide with enemy piece");
-                movementValue = 0;
+                // this code captures pieces like normal chess, which is boring
+
+                //targetTile = dirs[direction].GetComponent<checkAvailability>().NearestTile();
+                //Destroy(dirs[direction].GetComponent<checkAvailability>().enemyPiece.gameObject);
+                //movementValue = 1;
 
                 //if (GetComponent<Outline>() != null)
                 //    Destroy(GetComponent<Outline>());
                 //if (!tc.coroutineIsRunning)
                 //    tc.StartCoroutine(tc.SwitchTurns());
+
+                // THIS code captures pieces like dumb bad chess, which is fun as shit
+
+                cc.playerPiece = this;
+                cc.enemyPiece = dirs[direction].GetComponent<checkAvailability>().enemyPiece.GetComponent<basePiece>();
+                isClashing = true;
+                //movementValue = 0;
+                cc.EnterClash();
             }
             else
             {

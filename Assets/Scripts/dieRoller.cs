@@ -22,10 +22,15 @@ public class dieRoller : MonoBehaviour
 
     public basePiece currentPiece;
 
-    public Text result, clash1, clash2;
-    public GameObject vs;
+    public Text result;
 
     private turnController tc;
+
+    public int mod;
+    public bool rollingPlayer, rollingEnemy;
+    public string rollingColor;
+    private clashController cc;
+    public Text rollToCapture;
 
     void Start ()
     {
@@ -34,6 +39,7 @@ public class dieRoller : MonoBehaviour
         button = transform.GetChild(4).gameObject;
 
         tc = GameObject.FindGameObjectWithTag("GameController").GetComponent<turnController>();
+        cc = GameObject.FindGameObjectWithTag("GameController").GetComponent<clashController>();
     }
 	
 	void Update ()
@@ -52,6 +58,25 @@ public class dieRoller : MonoBehaviour
 
             rolled = false;
         }
+
+        if (rollingPlayer || rollingEnemy)
+        {
+            rollToCapture.gameObject.SetActive(true);
+            rollToCapture.text = rollingColor + "\nRoll to capture!";
+
+            if (rollingColor == "WHITE")
+            {
+                rollToCapture.color = Color.white;
+                rollToCapture.gameObject.GetComponent<Outline>().effectColor = Color.black;
+            }
+            if (rollingColor == "BLACK")
+            {
+                rollToCapture.color = Color.black;
+                rollToCapture.gameObject.GetComponent<Outline>().effectColor = Color.white;
+            }
+        }
+        else
+            rollToCapture.gameObject.SetActive(false);
 	}
 
     public void RollDie()
@@ -69,20 +94,55 @@ public class dieRoller : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         int value = d.GetComponent<DieSides>().GetDieSideMatchInfo().closestMatch.values[0];
+        value += mod;
+        mod = 0;
         yield return new WaitForSeconds(1f);
 
         Destroy(d.gameObject);
         result.text = value.ToString();
-        if (tc.whiteTurn)
-            result.color = Color.white;
+
+        if (rollingPlayer || rollingEnemy)
+        {
+            if (rollingColor == "WHITE")
+                result.color = Color.white;
+            if (rollingColor == "BLACK")
+                result.color = Color.black;
+        }
         else
-            result.color = Color.black;
+        {
+            if (tc.whiteTurn)
+                result.color = Color.white;
+            else
+                result.color = Color.black;
+        }
+
         result.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(1);
         result.gameObject.SetActive(false);
         isActive = false;
         yield return new WaitForSeconds(1);
-        currentPiece.SetMovement(value + 1);
+
+        if (rollingPlayer)
+        {
+            cc.playerRoll = value;
+            cc.RollForEnemy();
+            rollingPlayer = false;
+            rolled = false;
+            yield break;
+        }
+        if (rollingEnemy)
+        {
+            cc.enemyRoll = value;
+            cc.Resolve();
+            rollingEnemy = false;
+            rolled = false;
+            yield break;
+        }
+        else
+        {
+            currentPiece.SetMovement(value + 1);
+            rolled = false;
+        }
     }
 }

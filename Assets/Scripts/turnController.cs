@@ -31,22 +31,22 @@ public class turnController : MonoBehaviour
         if (movingPiece)
         {
             foreach (GameObject g in bPieces)
-                g.GetComponent<basePiece>().canBeClicked = false;
-                //g.GetComponent<Collider>().enabled = false;
+                if (g != null)
+                    g.GetComponent<basePiece>().canBeClicked = false;
             foreach (GameObject g in wPieces)
-                g.GetComponent<basePiece>().canBeClicked = false;
-                //g.GetComponent<Collider>().enabled = false;
+                if (g != null)
+                    g.GetComponent<basePiece>().canBeClicked = false;
         }
         else
         {
             if (whiteTurn)
             {
                 foreach (GameObject g in bPieces)
-                    g.GetComponent<basePiece>().canBeClicked = false;
-                    //g.GetComponent<Collider>().enabled = false;
+                    if (g != null)
+                        g.GetComponent<basePiece>().canBeClicked = false;
                 foreach (GameObject g in wPieces)
-                    g.GetComponent<basePiece>().canBeClicked = true;
-                    //g.GetComponent<Collider>().enabled = true;
+                    if (g != null)
+                        g.GetComponent<basePiece>().canBeClicked = true;
 
                 wTurn.SetActive(true);
                 bTurn.SetActive(false);
@@ -56,11 +56,11 @@ public class turnController : MonoBehaviour
             if (!whiteTurn)
             {
                 foreach (GameObject g in wPieces)
-                    g.GetComponent<basePiece>().canBeClicked = false;
-                    //g.GetComponent<Collider>().enabled = false;
+                    if (g != null)
+                        g.GetComponent<basePiece>().canBeClicked = false;
                 foreach (GameObject g in bPieces)
-                    g.GetComponent<basePiece>().canBeClicked = true;
-                    //g.GetComponent<Collider>().enabled = true;
+                    if (g != null)
+                        g.GetComponent<basePiece>().canBeClicked = true;
 
                 bTurn.SetActive(true);
                 wTurn.SetActive(false);

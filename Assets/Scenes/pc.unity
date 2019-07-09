@@ -395,6 +395,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &13205362
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -798,80 +800,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 34680903}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &35675391
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 35675392}
-  - component: {fileID: 35675394}
-  - component: {fileID: 35675393}
-  m_Layer: 5
-  m_Name: clash result 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &35675392
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 35675391}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1857333128}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -30, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5000001, y: 0.49999946}
---- !u!114 &35675393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 35675391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 4
---- !u!222 &35675394
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 35675391}
 --- !u!1 &36287235
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,6 +857,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &36287239
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1041,6 +971,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: BLACK
+  isClashing: 0
 --- !u!65 &36688464
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1150,6 +1083,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: BLACK
+  isClashing: 0
 --- !u!65 &39775248
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1352,6 +1288,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: WHITE
+  isClashing: 0
 --- !u!65 &48604466
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1401,8 +1340,8 @@ GameObject:
   m_Component:
   - component: {fileID: 64450750}
   - component: {fileID: 64450751}
-  - component: {fileID: 64450752}
   - component: {fileID: 64450753}
+  - component: {fileID: 64450752}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -1443,12 +1382,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 64450749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09947ff26c948243b73cd41b00ead68, type: 3}
+  m_Script: {fileID: 11500000, guid: ddfcc1a16a72c4147a9950bf1f3d96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &64450753
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1521,6 +1462,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &64810150
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1730,6 +1673,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: BLACK
+  isClashing: 0
 --- !u!65 &69355809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1932,6 +1878,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &78285116
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2101,6 +2049,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &82262736
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2173,6 +2123,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &86061231
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2245,6 +2197,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &88483020
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2414,6 +2368,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &97659154
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2486,6 +2442,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &101410048
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2871,6 +2829,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &118356743
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3393,8 +3353,8 @@ GameObject:
   m_Component:
   - component: {fileID: 139833253}
   - component: {fileID: 139833254}
-  - component: {fileID: 139833255}
   - component: {fileID: 139833256}
+  - component: {fileID: 139833255}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -3435,12 +3395,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 139833252}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09947ff26c948243b73cd41b00ead68, type: 3}
+  m_Script: {fileID: 11500000, guid: ddfcc1a16a72c4147a9950bf1f3d96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &139833256
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3641,6 +3603,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &169524558
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3850,80 +3814,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 170335995}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &174656245
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 174656246}
-  - component: {fileID: 174656248}
-  - component: {fileID: 174656247}
-  m_Layer: 5
-  m_Name: vs
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &174656246
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 174656245}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1857333128}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030517578, y: -0.000015258789}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5000001, y: 0.49999946}
---- !u!114 &174656247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 174656245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: vs
---- !u!222 &174656248
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 174656245}
 --- !u!1 &184917855
 GameObject:
   m_ObjectHideFlags: 0
@@ -4177,6 +4067,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &204170741
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4475,6 +4367,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &216858298
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4797,6 +4691,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &240485031
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4966,6 +4862,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &241681751
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5504,6 +5402,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: WHITE
+  isClashing: 0
 --- !u!65 &272510176
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5803,6 +5704,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &294873963
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6215,6 +6118,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &329501980
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6923,6 +6828,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &356706862
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7363,6 +7270,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &384943137
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7475,6 +7384,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: WHITE
+  isClashing: 0
 --- !u!65 &386734925
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7544,6 +7456,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &387276222
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7713,6 +7627,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &395016704
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8063,6 +7979,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &445250578
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8135,6 +8053,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &446095072
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8207,6 +8127,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &448132336
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8376,6 +8298,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &453684936
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8599,8 +8523,8 @@ MonoBehaviour:
   sourceCamera: {fileID: 459304754}
   outlineCamera: {fileID: 1689613445}
   outlineShaderMaterial: {fileID: 0}
-  renderTexture: {fileID: 1222263251}
-  extraRenderTexture: {fileID: 767294328}
+  renderTexture: {fileID: 1993147337}
+  extraRenderTexture: {fileID: 1073567867}
 --- !u!114 &459304757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8669,6 +8593,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &472134464
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8804,7 +8730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01cdd69234edcd40bb42e0a8e1498da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  die: 3
+  die: 1
   strengthMod: 1
   direction: 0
   dirs: []
@@ -8812,6 +8738,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: WHITE
+  isClashing: 0
 --- !u!65 &477288086
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8922,8 +8851,8 @@ GameObject:
   m_Component:
   - component: {fileID: 480575785}
   - component: {fileID: 480575786}
-  - component: {fileID: 480575787}
   - component: {fileID: 480575788}
+  - component: {fileID: 480575787}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -8964,12 +8893,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 480575784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09947ff26c948243b73cd41b00ead68, type: 3}
+  m_Script: {fileID: 11500000, guid: ddfcc1a16a72c4147a9950bf1f3d96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &480575788
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9264,6 +9195,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &513184700
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9533,6 +9466,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &527330002
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9855,6 +9790,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &551904773
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10147,6 +10084,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: BLACK
+  isClashing: 0
 --- !u!65 &570133118
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10216,6 +10156,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &572119046
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10268,8 +10210,8 @@ GameObject:
   m_Component:
   - component: {fileID: 585055648}
   - component: {fileID: 585055649}
-  - component: {fileID: 585055650}
   - component: {fileID: 585055651}
+  - component: {fileID: 585055650}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -10310,12 +10252,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 585055647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09947ff26c948243b73cd41b00ead68, type: 3}
+  m_Script: {fileID: 11500000, guid: ddfcc1a16a72c4147a9950bf1f3d96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &585055651
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10388,6 +10332,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &586967758
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11231,6 +11177,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: BLACK
+  isClashing: 0
 --- !u!65 &638159627
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11374,6 +11323,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &653132518
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11446,6 +11397,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &660490799
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11712,6 +11665,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &672515411
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11816,6 +11771,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &679976377
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12082,6 +12039,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &699785477
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12154,6 +12113,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &701886421
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12545,6 +12506,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &721546011
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12742,6 +12705,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &739586129
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13177,8 +13142,8 @@ GameObject:
   m_Component:
   - component: {fileID: 765954811}
   - component: {fileID: 765954812}
-  - component: {fileID: 765954813}
   - component: {fileID: 765954814}
+  - component: {fileID: 765954813}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -13219,12 +13184,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 765954810}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09947ff26c948243b73cd41b00ead68, type: 3}
+  m_Script: {fileID: 11500000, guid: ddfcc1a16a72c4147a9950bf1f3d96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &765954814
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13240,37 +13207,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!84 &767294328
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 808
-  m_Height: 454
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &774736878
 GameObject:
   m_ObjectHideFlags: 0
@@ -13328,6 +13264,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &774736882
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13525,6 +13463,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &793714890
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13754,6 +13694,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &835725192
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13826,6 +13768,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &842288579
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13930,7 +13874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01cdd69234edcd40bb42e0a8e1498da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  die: 3
+  die: 1
   strengthMod: 1
   direction: 0
   dirs: []
@@ -13938,6 +13882,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: WHITE
+  isClashing: 0
 --- !u!65 &845911873
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14007,6 +13954,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &853588000
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14031,8 +13980,8 @@ GameObject:
   m_Component:
   - component: {fileID: 858164100}
   - component: {fileID: 858164101}
-  - component: {fileID: 858164102}
   - component: {fileID: 858164103}
+  - component: {fileID: 858164102}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -14073,12 +14022,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 858164099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09947ff26c948243b73cd41b00ead68, type: 3}
+  m_Script: {fileID: 11500000, guid: ddfcc1a16a72c4147a9950bf1f3d96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &858164103
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14151,6 +14102,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &859373983
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14223,6 +14176,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &861483504
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14295,6 +14250,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &867727344
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14416,8 +14373,8 @@ GameObject:
   m_Component:
   - component: {fileID: 887328330}
   - component: {fileID: 887328331}
-  - component: {fileID: 887328332}
   - component: {fileID: 887328333}
+  - component: {fileID: 887328332}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -14458,12 +14415,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 887328329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09947ff26c948243b73cd41b00ead68, type: 3}
+  m_Script: {fileID: 11500000, guid: ddfcc1a16a72c4147a9950bf1f3d96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &887328333
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14536,6 +14495,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &887861582
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14608,6 +14569,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &890655319
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14777,6 +14740,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &896465171
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14885,6 +14850,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &911963986
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14957,6 +14924,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &917139778
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14981,8 +14950,8 @@ GameObject:
   m_Component:
   - component: {fileID: 920592765}
   - component: {fileID: 920592766}
-  - component: {fileID: 920592767}
   - component: {fileID: 920592768}
+  - component: {fileID: 920592767}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -15023,12 +14992,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 920592764}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09947ff26c948243b73cd41b00ead68, type: 3}
+  m_Script: {fileID: 11500000, guid: ddfcc1a16a72c4147a9950bf1f3d96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &920592768
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15491,6 +15462,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: BLACK
+  isClashing: 0
 --- !u!65 &945492592
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15620,7 +15594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01cdd69234edcd40bb42e0a8e1498da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  die: 3
+  die: 1
   strengthMod: 1
   direction: 0
   dirs: []
@@ -15628,6 +15602,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: WHITE
+  isClashing: 0
 --- !u!65 &945793033
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15697,6 +15674,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &946381952
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15797,7 +15776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01cdd69234edcd40bb42e0a8e1498da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  die: 3
+  die: 1
   strengthMod: 3
   direction: 0
   dirs: []
@@ -15805,6 +15784,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: WHITE
+  isClashing: 0
 --- !u!65 &950468847
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15848,80 +15830,6 @@ Transform:
   m_Father: {fileID: 1371680394}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &951686938
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 951686939}
-  - component: {fileID: 951686941}
-  - component: {fileID: 951686940}
-  m_Layer: 5
-  m_Name: clash result 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &951686939
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 951686938}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1857333128}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 30, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5000001, y: 0.49999946}
---- !u!114 &951686940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 951686938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 4
---- !u!222 &951686941
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 951686938}
 --- !u!1 &954093330
 GameObject:
   m_ObjectHideFlags: 0
@@ -16173,6 +16081,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &958964010
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16245,6 +16155,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &959279558
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16317,6 +16229,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &963559592
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16486,6 +16400,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &969522413
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16598,6 +16514,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: WHITE
+  isClashing: 0
 --- !u!65 &974435557
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16707,6 +16626,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: BLACK
+  isClashing: 0
 --- !u!65 &976224766
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16776,6 +16698,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &978437273
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16848,6 +16772,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &981567433
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16920,6 +16846,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &997877959
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16992,6 +16920,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &999231407
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17419,6 +17349,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1037840283
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17491,6 +17423,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1039723905
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17563,6 +17497,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1044280841
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17704,16 +17640,16 @@ MonoBehaviour:
   die: 0
   dice:
   - {fileID: 1852804267308654, guid: 885ec9d35a8ace14eb02a931ae05de39, type: 2}
-  - {fileID: 1393145417981978, guid: c531f6dd75f76e5449bf3d1690f80991, type: 2}
-  - {fileID: 1131659816781192, guid: b41755172d481ce4abb06cb1d7cf3d46, type: 2}
   - {fileID: 1176532198219360, guid: fb5c41eb9526d0943857b1e1743d0c68, type: 2}
-  - {fileID: 1749688531922966, guid: cdc30ce353e5d1a4c9f3dbb748ea77a1, type: 2}
+  - {fileID: 1061270642767088, guid: ef744bcd101a9da41bffe386846c822d, type: 2}
   throwForce: 500
   currentPiece: {fileID: 0}
   result: {fileID: 650025013}
-  clash1: {fileID: 35675393}
-  clash2: {fileID: 951686940}
-  vs: {fileID: 174656245}
+  mod: 0
+  rollingPlayer: 0
+  rollingEnemy: 0
+  rollingColor: 
+  rollToCapture: {fileID: 1448193968}
 --- !u!1 &1046256155
 GameObject:
   m_ObjectHideFlags: 0
@@ -17802,6 +17738,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1048280962
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17874,6 +17812,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1049295392
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17978,7 +17918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01cdd69234edcd40bb42e0a8e1498da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  die: 3
+  die: 1
   strengthMod: 1
   direction: 0
   dirs: []
@@ -17986,6 +17926,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: BLACK
+  isClashing: 0
 --- !u!65 &1051365712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18192,6 +18135,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1070119936}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &1073567867
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 808
+  m_Height: 454
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1077707574
 GameObject:
   m_ObjectHideFlags: 0
@@ -18249,6 +18223,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1077707578
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18418,6 +18394,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1080353804
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18490,6 +18468,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1080769808
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18987,6 +18967,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: WHITE
+  isClashing: 0
   extraJump: 0
 --- !u!65 &1124398901
 BoxCollider:
@@ -19057,6 +19040,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1126877789
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19129,6 +19114,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1133728438
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19276,6 +19263,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: BLACK
+  isClashing: 0
   extraJump: 0
 --- !u!65 &1140816663
 BoxCollider:
@@ -19580,6 +19570,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: BLACK
+  isClashing: 0
 --- !u!65 &1142557341
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19677,6 +19670,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1160279027
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19954,6 +19949,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1196081554
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19978,8 +19975,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1196102402}
   - component: {fileID: 1196102403}
-  - component: {fileID: 1196102404}
   - component: {fileID: 1196102405}
+  - component: {fileID: 1196102404}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -20020,12 +20017,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1196102401}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09947ff26c948243b73cd41b00ead68, type: 3}
+  m_Script: {fileID: 11500000, guid: ddfcc1a16a72c4147a9950bf1f3d96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1196102405
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20098,6 +20097,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1196335860
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20461,6 +20462,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1210242846
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20533,6 +20536,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1210436837
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20548,37 +20553,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!84 &1222263251
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 808
-  m_Height: 454
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1230098932
 GameObject:
   m_ObjectHideFlags: 0
@@ -20636,6 +20610,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1230098936
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20836,6 +20812,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1236363670
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20908,6 +20886,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1244627151
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21077,6 +21057,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1250314193
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21274,6 +21256,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1258321161
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21346,6 +21330,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1265800455
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21543,7 +21529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01cdd69234edcd40bb42e0a8e1498da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  die: 3
+  die: 1
   strengthMod: 3
   direction: 0
   dirs: []
@@ -21551,6 +21537,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: BLACK
+  isClashing: 0
 --- !u!65 &1267361340
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21620,6 +21609,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1271870393
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21914,6 +21905,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1281835725
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22552,6 +22545,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1329956333
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22567,6 +22562,47 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1330873669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1330873670}
+  - component: {fileID: 1330873671}
+  m_Layer: 0
+  m_Name: white end zone
+  m_TagString: White
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1330873670
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1330873669}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1514893624}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1330873671
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1330873669}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4.080664, z: 0.11674885}
+  m_Center: {x: 0, y: 1.5403322, z: -0.44162723}
 --- !u!1 &1336238559
 GameObject:
   m_ObjectHideFlags: 0
@@ -22624,6 +22660,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1336238563
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22922,7 +22960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01cdd69234edcd40bb42e0a8e1498da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  die: 3
+  die: 1
   strengthMod: 1
   direction: 0
   dirs: []
@@ -22930,6 +22968,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: WHITE
+  isClashing: 0
 --- !u!65 &1369588472
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22951,8 +22992,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1369672026}
   - component: {fileID: 1369672027}
-  - component: {fileID: 1369672028}
   - component: {fileID: 1369672029}
+  - component: {fileID: 1369672028}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -22993,12 +23034,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1369672025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09947ff26c948243b73cd41b00ead68, type: 3}
+  m_Script: {fileID: 11500000, guid: ddfcc1a16a72c4147a9950bf1f3d96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1369672029
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23111,6 +23154,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: WHITE
+  isClashing: 0
 --- !u!65 &1371680399
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23132,8 +23178,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1382932790}
   - component: {fileID: 1382932791}
-  - component: {fileID: 1382932792}
   - component: {fileID: 1382932793}
+  - component: {fileID: 1382932792}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -23174,12 +23220,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1382932789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09947ff26c948243b73cd41b00ead68, type: 3}
+  m_Script: {fileID: 11500000, guid: ddfcc1a16a72c4147a9950bf1f3d96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1382932793
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23312,6 +23360,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1390691158
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23336,6 +23386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1392929614}
   - component: {fileID: 1392929613}
+  - component: {fileID: 1392929615}
   m_Layer: 0
   m_Name: game controller
   m_TagString: GameController
@@ -23374,6 +23425,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1392929615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1392929612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda44a394bd141a49a60ca6f7a5b55fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPiece: {fileID: 0}
+  enemyPiece: {fileID: 0}
+  playerSpace: {fileID: 0}
+  enemySpace: {fileID: 0}
+  speed: 1
+  playerRoll: 0
+  enemyRoll: 0
 --- !u!1 &1397829215
 GameObject:
   m_ObjectHideFlags: 0
@@ -23528,6 +23597,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1401188906
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23644,6 +23715,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: BLACK
+  isClashing: 0
   extraJump: 0
 --- !u!65 &1401749554
 BoxCollider:
@@ -23851,6 +23925,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: WHITE
+  isClashing: 0
 --- !u!65 &1409603892
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23920,6 +23997,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1412771929
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24256,6 +24335,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1436743597
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24328,6 +24409,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1436990478
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24400,6 +24483,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1441825827
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24504,7 +24589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01cdd69234edcd40bb42e0a8e1498da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  die: 3
+  die: 1
   strengthMod: 1
   direction: 0
   dirs: []
@@ -24512,6 +24597,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: BLACK
+  isClashing: 0
 --- !u!65 &1443333010
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24718,6 +24806,97 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1446814317}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1448193965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1448193966}
+  - component: {fileID: 1448193969}
+  - component: {fileID: 1448193968}
+  - component: {fileID: 1448193967}
+  m_Layer: 5
+  m_Name: roll to capture
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1448193966
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1448193965}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1857333128}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 97}
+  m_SizeDelta: {x: 300, y: 300}
+  m_Pivot: {x: 0.5000001, y: 0.49999946}
+--- !u!114 &1448193967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1448193965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1448193968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1448193965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 25
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'COLOR
+
+    Roll to capture!'
+--- !u!222 &1448193969
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1448193965}
 --- !u!1 &1455170762
 GameObject:
   m_ObjectHideFlags: 0
@@ -24775,6 +24954,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1455170766
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24910,6 +25091,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1468583174
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25018,6 +25201,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1480925182
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25219,6 +25404,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1490690997
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25679,6 +25866,7 @@ Transform:
   - {fileID: 371578550}
   - {fileID: 341485218}
   - {fileID: 1508872269}
+  - {fileID: 1330873670}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25775,7 +25963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01cdd69234edcd40bb42e0a8e1498da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  die: 3
+  die: 1
   strengthMod: 1
   direction: 0
   dirs: []
@@ -25783,6 +25971,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: BLACK
+  isClashing: 0
 --- !u!65 &1523398552
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25852,6 +26043,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1525765000
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25924,6 +26117,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1530009244
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26472,6 +26667,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1561291516
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26653,8 +26850,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1565617481}
   - component: {fileID: 1565617482}
-  - component: {fileID: 1565617483}
   - component: {fileID: 1565617484}
+  - component: {fileID: 1565617483}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -26695,12 +26892,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1565617480}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09947ff26c948243b73cd41b00ead68, type: 3}
+  m_Script: {fileID: 11500000, guid: ddfcc1a16a72c4147a9950bf1f3d96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1565617484
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26773,6 +26972,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1571398355
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26845,6 +27046,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1582475361
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27660,6 +27863,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1627982991
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27732,6 +27937,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1635597976
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27844,6 +28051,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: WHITE
+  isClashing: 0
 --- !u!65 &1652638739
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28073,6 +28283,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1669708546
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28097,8 +28309,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1672969839}
   - component: {fileID: 1672969840}
-  - component: {fileID: 1672969841}
   - component: {fileID: 1672969842}
+  - component: {fileID: 1672969841}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -28139,12 +28351,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1672969838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09947ff26c948243b73cd41b00ead68, type: 3}
+  m_Script: {fileID: 11500000, guid: ddfcc1a16a72c4147a9950bf1f3d96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1672969842
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28217,6 +28431,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1676361579
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28387,7 +28603,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: 1
-  m_TargetTexture: {fileID: 1222263251}
+  m_TargetTexture: {fileID: 1993147337}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -28454,6 +28670,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1698620085
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28685,6 +28903,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: WHITE
+  isClashing: 0
 --- !u!65 &1702648097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28754,6 +28975,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1706780811
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28826,6 +29049,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1710902074
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28947,8 +29172,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1713722992}
   - component: {fileID: 1713722993}
-  - component: {fileID: 1713722994}
   - component: {fileID: 1713722995}
+  - component: {fileID: 1713722994}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -28989,12 +29214,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713722991}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09947ff26c948243b73cd41b00ead68, type: 3}
+  m_Script: {fileID: 11500000, guid: ddfcc1a16a72c4147a9950bf1f3d96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1713722995
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29204,6 +29431,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: BLACK
+  isClashing: 0
 --- !u!65 &1751454648
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29273,6 +29503,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1767534637
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29373,6 +29605,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1774574885
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29598,6 +29832,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1784629252
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29767,6 +30003,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1793894463
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29903,6 +30141,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1807408280
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30302,6 +30542,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1850121844
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30354,8 +30596,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1854282233}
   - component: {fileID: 1854282234}
-  - component: {fileID: 1854282235}
   - component: {fileID: 1854282236}
+  - component: {fileID: 1854282235}
   m_Layer: 0
   m_Name: u
   m_TagString: Untagged
@@ -30396,12 +30638,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1854282232}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09947ff26c948243b73cd41b00ead68, type: 3}
+  m_Script: {fileID: 11500000, guid: ddfcc1a16a72c4147a9950bf1f3d96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1854282236
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30509,9 +30753,7 @@ RectTransform:
   - {fileID: 479700259}
   - {fileID: 320924205}
   - {fileID: 650025012}
-  - {fileID: 35675392}
-  - {fileID: 174656246}
-  - {fileID: 951686939}
+  - {fileID: 1448193966}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -30754,8 +30996,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1869848297}
   - component: {fileID: 1869848298}
-  - component: {fileID: 1869848299}
   - component: {fileID: 1869848300}
+  - component: {fileID: 1869848299}
   m_Layer: 0
   m_Name: d
   m_TagString: Untagged
@@ -30796,12 +31038,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1869848296}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09947ff26c948243b73cd41b00ead68, type: 3}
+  m_Script: {fileID: 11500000, guid: ddfcc1a16a72c4147a9950bf1f3d96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1869848300
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30902,6 +31146,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1873502045
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31107,7 +31353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01cdd69234edcd40bb42e0a8e1498da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  die: 3
+  die: 1
   strengthMod: 1
   direction: 0
   dirs: []
@@ -31115,6 +31361,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: BLACK
+  isClashing: 0
 --- !u!65 &1883083547
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31578,6 +31827,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1927353566
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31650,6 +31901,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &1937625850
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -32012,6 +32265,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: WHITE
+  isClashing: 0
 --- !u!65 &1970997750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32253,6 +32509,9 @@ MonoBehaviour:
   movementValue: 0
   speed: 1
   targetTile: {fileID: 0}
+  canBeClicked: 0
+  pieceColor: WHITE
+  isClashing: 0
   extraJump: 0
 --- !u!65 &1986176272
 BoxCollider:
@@ -32391,6 +32650,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1988293709}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!84 &1993147337
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 808
+  m_Height: 454
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &2005114178
 GameObject:
   m_ObjectHideFlags: 0
@@ -32782,6 +33072,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &2017244858
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -32916,6 +33208,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &2022956492
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33047,6 +33341,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &2046999127
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33119,6 +33415,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &2048008515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33191,6 +33489,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &2053188027
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33770,6 +34070,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &2075027190
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33939,6 +34241,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &2093005083
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34047,6 +34351,8 @@ MonoBehaviour:
   alliedTag: White
   enemyTag: Black
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &2096867823
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34288,6 +34594,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &2130454116
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34360,6 +34668,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &2137155207
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34460,6 +34770,8 @@ MonoBehaviour:
   alliedTag: Black
   enemyTag: White
   available: 0
+  touchingEnemy: 0
+  enemyPiece: {fileID: 0}
 --- !u!54 &2144088269
 Rigidbody:
   m_ObjectHideFlags: 0

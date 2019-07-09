@@ -12,6 +12,8 @@ public class checkAvailability : MonoBehaviour
     public bool touchingEnemy;
 
     private GameObject[] tiles;
+
+    public GameObject enemyPiece;
     
 	void Start ()
     {
@@ -39,6 +41,7 @@ public class checkAvailability : MonoBehaviour
         if (other.CompareTag(enemyTag))
         {
             touchingEnemy = true;
+            enemyPiece = other.gameObject;
             //Debug.Log(name + " is touching " + other.name);
         }
     }
@@ -50,7 +53,10 @@ public class checkAvailability : MonoBehaviour
         if (other.CompareTag(alliedTag))
             touchingAlly = false;
         if (other.CompareTag(enemyTag))
+        {
             touchingEnemy = false;
+            enemyPiece = null;
+        }
     }
 
     public Transform NearestTile()
