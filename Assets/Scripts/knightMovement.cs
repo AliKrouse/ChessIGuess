@@ -51,8 +51,10 @@ public class knightMovement : basePiece
             {
                 if (GetComponent<Outline>() != null)
                     Destroy(GetComponent<Outline>());
-                if (!tc.coroutineIsRunning)
-                    tc.StartCoroutine(tc.SwitchTurns());
+                //if (!tc.coroutineIsRunning)
+                //    tc.StartCoroutine(tc.SwitchTurns());
+                if (!wc.hasCheckedForVictory)
+                    wc.CheckForVictory();
 
                 extraJump = false;
             }
@@ -63,8 +65,10 @@ public class knightMovement : basePiece
 
             if (GetComponent<Outline>() != null)
                 Destroy(GetComponent<Outline>());
-            if (!tc.coroutineIsRunning)
-                tc.StartCoroutine(tc.SwitchTurns());
+            //if (!tc.coroutineIsRunning)
+            //    tc.StartCoroutine(tc.SwitchTurns());
+            if (!wc.hasCheckedForVictory)
+                wc.CheckForVictory();
 
             extraJump = false;
         }

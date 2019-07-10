@@ -10,14 +10,16 @@ public class clashController : MonoBehaviour
     public float speed;
 
     private dieRoller dr;
-    private turnController tc;
+    //private turnController tc;
+    private winController wc;
 
     public int playerRoll, enemyRoll;
 
 	void Start ()
     {
         dr = FindObjectOfType<dieRoller>();
-        tc = FindObjectOfType<turnController>();
+        //tc = FindObjectOfType<turnController>();
+        wc = FindObjectOfType<winController>();
     }
 
     public void EnterClash()
@@ -55,8 +57,10 @@ public class clashController : MonoBehaviour
 
             if (playerPiece.GetComponent<Outline>() != null)
                 Destroy(GetComponent<Outline>());
-            if (!tc.coroutineIsRunning)
-                tc.StartCoroutine(tc.SwitchTurns());
+            //if (!tc.coroutineIsRunning)
+            //    tc.StartCoroutine(tc.SwitchTurns());
+            if (!wc.hasCheckedForVictory)
+                wc.CheckForVictory();
         }
     }
 }

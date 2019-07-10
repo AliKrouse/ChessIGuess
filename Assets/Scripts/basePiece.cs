@@ -20,7 +20,8 @@ public class basePiece : MonoBehaviour
 
     public Transform targetTile;
 
-    protected turnController tc;
+    //protected turnController tc;
+    protected winController wc;
     protected clashController cc;
 
     private float timer;
@@ -59,7 +60,8 @@ public class basePiece : MonoBehaviour
         }
         targetTile = tiles[closestIndex].transform;
 
-        tc = FindObjectOfType<turnController>();
+        //tc = FindObjectOfType<turnController>();
+        wc = FindObjectOfType<winController>();
         cc = FindObjectOfType<clashController>();
 
         dr = FindObjectOfType<dieRoller>();
@@ -154,8 +156,10 @@ public class basePiece : MonoBehaviour
                 {
                     if (GetComponent<Outline>() != null)
                         Destroy(GetComponent<Outline>());
-                    if (!tc.coroutineIsRunning)
-                        tc.StartCoroutine(tc.SwitchTurns());
+                    //if (!tc.coroutineIsRunning)
+                    //    tc.StartCoroutine(tc.SwitchTurns());
+                    if (!wc.hasCheckedForVictory)
+                        wc.CheckForVictory();
                 }
             }
         }
@@ -165,8 +169,10 @@ public class basePiece : MonoBehaviour
 
             if (GetComponent<Outline>() != null)
                 Destroy(GetComponent<Outline>());
-            if (!tc.coroutineIsRunning)
-                tc.StartCoroutine(tc.SwitchTurns());
+            //if (!tc.coroutineIsRunning)
+            //    tc.StartCoroutine(tc.SwitchTurns());
+            if (!wc.hasCheckedForVictory)
+                wc.CheckForVictory();
         }
     }
 }

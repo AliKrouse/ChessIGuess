@@ -10,6 +10,7 @@ public class turnController : MonoBehaviour
     public bool whiteTurn;
 
     private dieRoller dr;
+    private winController wc;
 
     public bool coroutineIsRunning;
     private bool movingPiece;
@@ -23,6 +24,7 @@ public class turnController : MonoBehaviour
         bPieces = GameObject.FindGameObjectsWithTag("Black");
 
         dr = FindObjectOfType<dieRoller>();
+        wc = GetComponent<winController>();
 
         pawns = FindObjectsOfType<pawnPiece>();
     }
@@ -88,6 +90,7 @@ public class turnController : MonoBehaviour
         movingPiece = false;
 
         coroutineIsRunning = false;
+        wc.hasCheckedForVictory = false;
 
         foreach (pawnPiece p in pawns)
             if (p != null)
