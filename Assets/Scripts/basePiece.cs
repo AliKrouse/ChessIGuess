@@ -31,7 +31,7 @@ public class basePiece : MonoBehaviour
     public bool isClashing;
 
     private AudioSource source;
-    public AudioClip pieceClip;
+    public AudioClip pieceClip, clashClip;
 
     public bool jumping;
 
@@ -157,6 +157,7 @@ public class basePiece : MonoBehaviour
                 cc.enemyPiece = dirs[direction].GetComponent<checkAvailability>().enemyPiece.GetComponent<basePiece>();
                 isClashing = true;
                 cc.EnterClash();
+                source.PlayOneShot(clashClip);
             }
             else
             {

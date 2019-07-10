@@ -900,6 +900,7 @@ MonoBehaviour:
   pieceColor: BLACK
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   queen: {fileID: 1777553973869296, guid: dd6136a8ece8d76408cdc4935bbb966d, type: 2}
 --- !u!1001 &39775244
@@ -1099,6 +1100,7 @@ MonoBehaviour:
   pieceColor: BLACK
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   queen: {fileID: 1777553973869296, guid: dd6136a8ece8d76408cdc4935bbb966d, type: 2}
 --- !u!1 &48074379
@@ -1299,6 +1301,7 @@ MonoBehaviour:
   pieceColor: WHITE
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
 --- !u!82 &48604464
 AudioSource:
@@ -1862,6 +1865,7 @@ MonoBehaviour:
   pieceColor: BLACK
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   queen: {fileID: 1777553973869296, guid: dd6136a8ece8d76408cdc4935bbb966d, type: 2}
 --- !u!1 &72400386
@@ -5170,6 +5174,7 @@ MonoBehaviour:
   pieceColor: WHITE
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   queen: {fileID: 1172566462069652, guid: e6df6264bee3d7249800d8b7391bb026, type: 2}
 --- !u!82 &272510174
@@ -7045,6 +7050,7 @@ MonoBehaviour:
   pieceColor: WHITE
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   queen: {fileID: 1172566462069652, guid: e6df6264bee3d7249800d8b7391bb026, type: 2}
 --- !u!82 &386734923
@@ -8018,8 +8024,8 @@ MonoBehaviour:
   sourceCamera: {fileID: 459304754}
   outlineCamera: {fileID: 1689613445}
   outlineShaderMaterial: {fileID: 0}
-  renderTexture: {fileID: 1501342571}
-  extraRenderTexture: {fileID: 2050457049}
+  renderTexture: {fileID: 1451144403}
+  extraRenderTexture: {fileID: 530829603}
 --- !u!114 &459304757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8167,6 +8173,7 @@ MonoBehaviour:
   pieceColor: WHITE
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
 --- !u!82 &477288084
 AudioSource:
@@ -9050,6 +9057,37 @@ Transform:
   m_Father: {fileID: 341485218}
   m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!84 &530829603
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 808
+  m_Height: 454
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &539402408
 GameObject:
   m_ObjectHideFlags: 0
@@ -9631,6 +9669,7 @@ MonoBehaviour:
   pieceColor: BLACK
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
 --- !u!65 &570133118
 BoxCollider:
@@ -10902,6 +10941,7 @@ MonoBehaviour:
   pieceColor: BLACK
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   queen: {fileID: 1777553973869296, guid: dd6136a8ece8d76408cdc4935bbb966d, type: 2}
 --- !u!1 &650025011
@@ -13407,6 +13447,7 @@ MonoBehaviour:
   pieceColor: WHITE
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
 --- !u!82 &845911871
 AudioSource:
@@ -15091,6 +15132,7 @@ MonoBehaviour:
   pieceColor: BLACK
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   queen: {fileID: 1777553973869296, guid: dd6136a8ece8d76408cdc4935bbb966d, type: 2}
 --- !u!1 &945739027
@@ -15226,6 +15268,7 @@ MonoBehaviour:
   pieceColor: WHITE
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
 --- !u!82 &945793031
 AudioSource:
@@ -15446,6 +15489,11 @@ Prefab:
       propertyPath: speed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114078092568298584, guid: e6df6264bee3d7249800d8b7391bb026,
+        type: 2}
+      propertyPath: clashClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e6df6264bee3d7249800d8b7391bb026, type: 2}
   m_IsPrefabParent: 0
@@ -16165,6 +16213,7 @@ MonoBehaviour:
   pieceColor: WHITE
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   queen: {fileID: 1172566462069652, guid: e6df6264bee3d7249800d8b7391bb026, type: 2}
 --- !u!82 &974435555
@@ -16456,6 +16505,7 @@ MonoBehaviour:
   pieceColor: BLACK
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   queen: {fileID: 1777553973869296, guid: dd6136a8ece8d76408cdc4935bbb966d, type: 2}
 --- !u!1 &978437269
@@ -17718,6 +17768,7 @@ MonoBehaviour:
   pieceColor: BLACK
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
 --- !u!65 &1051365712
 BoxCollider:
@@ -18717,6 +18768,7 @@ MonoBehaviour:
   pieceColor: WHITE
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   extraJump: 0
 --- !u!82 &1124398899
@@ -19025,6 +19077,7 @@ MonoBehaviour:
   pieceColor: BLACK
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   extraJump: 0
 --- !u!65 &1140816663
@@ -19510,6 +19563,7 @@ MonoBehaviour:
   pieceColor: BLACK
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   queen: {fileID: 1777553973869296, guid: dd6136a8ece8d76408cdc4935bbb966d, type: 2}
 --- !u!1 &1148306349
@@ -21424,6 +21478,11 @@ Prefab:
       propertyPath: speed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114914778739302076, guid: dd6136a8ece8d76408cdc4935bbb966d,
+        type: 2}
+      propertyPath: clashClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd6136a8ece8d76408cdc4935bbb966d, type: 2}
   m_IsPrefabParent: 0
@@ -22609,6 +22668,7 @@ MonoBehaviour:
   pieceColor: WHITE
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
 --- !u!82 &1369588470
 AudioSource:
@@ -22877,6 +22937,7 @@ MonoBehaviour:
   pieceColor: WHITE
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   queen: {fileID: 1172566462069652, guid: e6df6264bee3d7249800d8b7391bb026, type: 2}
 --- !u!82 &1371680397
@@ -23246,6 +23307,7 @@ MonoBehaviour:
   speed: 1
   playerRoll: 0
   enemyRoll: 0
+  particles: {fileID: 1254792602926844, guid: 1ce2e22bd68f91b42ba6296abddc8a6e, type: 2}
 --- !u!114 &1392929616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23472,6 +23534,7 @@ MonoBehaviour:
   pieceColor: BLACK
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   extraJump: 0
 --- !u!65 &1401749554
@@ -23768,6 +23831,7 @@ MonoBehaviour:
   pieceColor: WHITE
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   queen: {fileID: 1172566462069652, guid: e6df6264bee3d7249800d8b7391bb026, type: 2}
 --- !u!82 &1409603890
@@ -24527,6 +24591,7 @@ MonoBehaviour:
   pieceColor: BLACK
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
 --- !u!65 &1443333010
 BoxCollider:
@@ -24905,6 +24970,37 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1448193965}
+--- !u!84 &1451144403
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_Width: 808
+  m_Height: 454
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1455170762
 GameObject:
   m_ObjectHideFlags: 0
@@ -25613,37 +25709,6 @@ Transform:
   m_Father: {fileID: 341485218}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &1501342571
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 808
-  m_Height: 454
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1501740480
 GameObject:
   m_ObjectHideFlags: 0
@@ -26017,6 +26082,7 @@ MonoBehaviour:
   pieceColor: BLACK
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
 --- !u!65 &1523398552
 BoxCollider:
@@ -27953,6 +28019,7 @@ MonoBehaviour:
   pieceColor: WHITE
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   queen: {fileID: 1172566462069652, guid: e6df6264bee3d7249800d8b7391bb026, type: 2}
 --- !u!82 &1652638737
@@ -28510,7 +28577,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: 1
-  m_TargetTexture: {fileID: 1501342571}
+  m_TargetTexture: {fileID: 1451144403}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -28818,6 +28885,7 @@ MonoBehaviour:
   pieceColor: WHITE
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   queen: {fileID: 1172566462069652, guid: e6df6264bee3d7249800d8b7391bb026, type: 2}
 --- !u!82 &1702648095
@@ -29525,6 +29593,7 @@ MonoBehaviour:
   pieceColor: BLACK
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   queen: {fileID: 1777553973869296, guid: dd6136a8ece8d76408cdc4935bbb966d, type: 2}
 --- !u!1 &1767534633
@@ -31110,6 +31179,7 @@ MonoBehaviour:
   pieceColor: BLACK
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
 --- !u!65 &1883083547
 BoxCollider:
@@ -32100,6 +32170,7 @@ MonoBehaviour:
   pieceColor: WHITE
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   queen: {fileID: 1172566462069652, guid: e6df6264bee3d7249800d8b7391bb026, type: 2}
 --- !u!82 &1970997748
@@ -32431,6 +32502,7 @@ MonoBehaviour:
   pieceColor: WHITE
   isClashing: 0
   pieceClip: {fileID: 8300000, guid: e7776fc62dd6e394b95518639015ec05, type: 3}
+  clashClip: {fileID: 8300000, guid: 6038548b0d076b54ba245ab12a8af6ae, type: 3}
   jumping: 0
   extraJump: 0
 --- !u!82 &1986176270
@@ -33327,37 +33399,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!84 &2050457049
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_Width: 808
-  m_Height: 454
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &2053188023
 GameObject:
   m_ObjectHideFlags: 0

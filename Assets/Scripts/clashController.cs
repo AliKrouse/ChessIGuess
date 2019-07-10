@@ -10,15 +10,15 @@ public class clashController : MonoBehaviour
     public float speed;
 
     private dieRoller dr;
-    //private turnController tc;
     private winController wc;
 
     public int playerRoll, enemyRoll;
 
+    public GameObject particles;
+
 	void Start ()
     {
         dr = FindObjectOfType<dieRoller>();
-        //tc = FindObjectOfType<turnController>();
         wc = FindObjectOfType<winController>();
     }
 
@@ -44,6 +44,12 @@ public class clashController : MonoBehaviour
     {
         if (playerRoll >= enemyRoll)
         {
+            GameObject p = Instantiate(particles, enemyPiece.transform.position, Quaternion.identity);
+            if (enemyPiece.pieceColor == "BLACK")
+                p.GetComponent<ParticleSystem>().startColor = Color.black;
+            if (enemyPiece.pieceColor == "WHITE")
+                p.GetComponent<ParticleSystem>().startColor = Color.white;
+
             Destroy(enemyPiece.gameObject);
             playerPiece.targetTile = enemyPiece.CurrentTile();
             playerPiece.isClashing = false;
@@ -51,6 +57,12 @@ public class clashController : MonoBehaviour
         }
         else
         {
+            GameObject p = Instantiate(particles, playerPiece.transform.position, Quaternion.identity);
+            if (playerPiece.pieceColor == "BLACK")
+                p.GetComponent<ParticleSystem>().startColor = Color.black;
+            if (playerPiece.pieceColor == "WHITE")
+                p.GetComponent<ParticleSystem>().startColor = Color.white;
+
             Destroy(playerPiece.gameObject);
             enemyPiece.targetTile = playerPiece.CurrentTile();
             enemyPiece.movementValue = 1;
@@ -58,8 +70,6 @@ public class clashController : MonoBehaviour
 
             if (playerPiece.GetComponent<Outline>() != null)
                 Destroy(GetComponent<Outline>());
-            //if (!tc.coroutineIsRunning)
-            //    tc.StartCoroutine(tc.SwitchTurns());
             if (!wc.hasCheckedForVictory)
                 wc.CheckForVictory();
         }
