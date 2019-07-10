@@ -54,6 +54,7 @@ public class clashController : MonoBehaviour
             Destroy(playerPiece.gameObject);
             enemyPiece.targetTile = playerPiece.CurrentTile();
             enemyPiece.movementValue = 1;
+            enemyPiece.jumping = true;
 
             if (playerPiece.GetComponent<Outline>() != null)
                 Destroy(GetComponent<Outline>());

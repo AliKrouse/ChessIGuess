@@ -7,8 +7,10 @@ using InnerDriveStudios.DiceCreator;
 public class dieRoller : MonoBehaviour
 {
     public Vector3 activePoint, inactivePoint;
+    public Vector3 rtcActive, rtcInactive;
     public bool isActive;
     public float speed;
+    public float textSpeed;
     public GameObject[] wPieces, bPieces;
 
     public int die;
@@ -56,12 +58,15 @@ public class dieRoller : MonoBehaviour
             if (Vector3.Distance(transform.position, inactivePoint) < float.Epsilon)
                 Destroy(d);
 
+            rollToCapture.gameObject.GetComponent<RectTransform>().localPosition = Vector3.MoveTowards(rollToCapture.gameObject.GetComponent<RectTransform>().localPosition, rtcInactive, Time.deltaTime * textSpeed);
+
             rolled = false;
         }
 
         if (rollingPlayer || rollingEnemy)
         {
-            rollToCapture.gameObject.SetActive(true);
+            //rollToCapture.gameObject.SetActive(true);
+            rollToCapture.gameObject.GetComponent<RectTransform>().localPosition = Vector3.MoveTowards(rollToCapture.gameObject.GetComponent<RectTransform>().localPosition, rtcActive, Time.deltaTime * textSpeed);
             rollToCapture.text = rollingColor + "\nRoll to capture!";
 
             if (rollingColor == "WHITE")
@@ -75,8 +80,6 @@ public class dieRoller : MonoBehaviour
                 rollToCapture.gameObject.GetComponent<Outline>().effectColor = Color.white;
             }
         }
-        else
-            rollToCapture.gameObject.SetActive(false);
 	}
 
     public void RollDie()

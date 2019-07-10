@@ -19,12 +19,9 @@ public class basePiece : MonoBehaviour
     public float speed;
 
     public Transform targetTile;
-
-    //protected turnController tc;
+    
     protected winController wc;
     protected clashController cc;
-
-    private float timer;
 
     public bool canBeClicked;
 
@@ -32,6 +29,11 @@ public class basePiece : MonoBehaviour
     public string pieceColor;
 
     public bool isClashing;
+
+    private AudioSource source;
+    public AudioClip pieceClip;
+
+    public bool jumping;
 
 	void Start ()
     {
@@ -59,12 +61,13 @@ public class basePiece : MonoBehaviour
             }
         }
         targetTile = tiles[closestIndex].transform;
-
-        //tc = FindObjectOfType<turnController>();
+        
         wc = FindObjectOfType<winController>();
         cc = FindObjectOfType<clashController>();
 
         dr = FindObjectOfType<dieRoller>();
+
+        source = GetComponent<AudioSource>();
     }
 
     public Transform CurrentTile()
@@ -87,17 +90,25 @@ public class basePiece : MonoBehaviour
     {
         if (movementValue > 0 && !isClashing)
         {
-            timer += Time.deltaTime;
-            Vector3 moveTo = new Vector3(targetTile.position.x, transform.position.y, targetTile.transform.position.z);
+            Vector3 moveTo = new Vector3(targetTile.position.x, 0.1241645f, targetTile.transform.position.z);
+            Vector3 midPoint = transform.position + (moveTo - transform.position) / 2;
+            Vector3 jumpPoint = new Vector3(midPoint.x, 0.44f, midPoint.z);
+
+            if (jumping)
+                transform.position = Vector3.MoveTowards(transform.position, jumpPoint, Time.deltaTime * speed);
+            else
+                transform.position = Vector3.MoveTowards(transform.position, moveTo, Time.deltaTime * speed);
+
+            float jumpD = Vector3.Distance(transform.position, jumpPoint);
+            if (jumpD < float.Epsilon)
+                jumping = false;
+
             float d = Vector3.Distance(transform.position, moveTo);
             if (d < float.Epsilon)
             {
+                source.PlayOneShot(pieceClip);
                 SetMovement(movementValue);
-                //Debug.Log("Took " + timer + " seconds to move");
-                timer = 0;
             }
-
-            transform.position = Vector3.MoveTowards(transform.position, moveTo, Time.deltaTime * speed);
         }
 	}
 
@@ -151,13 +162,13 @@ public class basePiece : MonoBehaviour
             {
                 targetTile = dirs[direction].GetComponent<checkAvailability>().NearestTile();
                 movementValue--;
+                jumping = true;
 
                 if (movementValue <= 0)
                 {
                     if (GetComponent<Outline>() != null)
                         Destroy(GetComponent<Outline>());
-                    //if (!tc.coroutineIsRunning)
-                    //    tc.StartCoroutine(tc.SwitchTurns());
+                    jumping = false;
                     if (!wc.hasCheckedForVictory)
                         wc.CheckForVictory();
                 }
@@ -169,8 +180,7 @@ public class basePiece : MonoBehaviour
 
             if (GetComponent<Outline>() != null)
                 Destroy(GetComponent<Outline>());
-            //if (!tc.coroutineIsRunning)
-            //    tc.StartCoroutine(tc.SwitchTurns());
+            jumping = false;
             if (!wc.hasCheckedForVictory)
                 wc.CheckForVictory();
         }

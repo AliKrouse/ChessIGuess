@@ -10,6 +10,7 @@ public class winController : MonoBehaviour
 
     public Image winImage;
     public Sprite whiteWin, blackWin;
+    public GameObject reset;
 
     private turnController tc;
 
@@ -44,11 +45,13 @@ public class winController : MonoBehaviour
         }
     }
 
-    void EndGame()
+    private IEnumerator EndGame()
     {
         gameObject.GetComponent<turnController>().enabled = false;
         gameObject.GetComponent<clashController>().enabled = false;
 
         winImage.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3);
+        reset.SetActive(true);
     }
 }
