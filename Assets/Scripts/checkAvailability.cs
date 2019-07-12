@@ -7,13 +7,13 @@ public class checkAvailability : MonoBehaviour
     public string alliedTag, enemyTag;
     protected GameObject arrow;
 
-    protected bool touchingAlly, touchingEdge;
+    public bool touchingAlly, touchingEdge;
     public bool available;
     public bool touchingEnemy;
 
     private GameObject[] tiles;
 
-    public GameObject enemyPiece;
+    public GameObject enemyPiece, allyPiece;
     
 	void Start ()
     {
@@ -30,6 +30,11 @@ public class checkAvailability : MonoBehaviour
             available = false;
 
         arrow.SetActive(available);
+
+        if (!allyPiece)
+            touchingAlly = false;
+        if (!enemyPiece)
+            touchingEnemy = false;
 	}
 
     private void OnTriggerStay(Collider other)
@@ -37,12 +42,14 @@ public class checkAvailability : MonoBehaviour
         if (other.CompareTag("Edge"))
             touchingEdge = true;
         if (other.CompareTag(alliedTag))
+        {
             touchingAlly = true;
+            allyPiece = other.gameObject;
+        }
         if (other.CompareTag(enemyTag))
         {
             touchingEnemy = true;
             enemyPiece = other.gameObject;
-            //Debug.Log(name + " is touching " + other.name);
         }
     }
 
@@ -51,7 +58,10 @@ public class checkAvailability : MonoBehaviour
         if (other.CompareTag("Edge"))
             touchingEdge = false;
         if (other.CompareTag(alliedTag))
+        {
             touchingAlly = false;
+            allyPiece = null;
+        }
         if (other.CompareTag(enemyTag))
         {
             touchingEnemy = false;

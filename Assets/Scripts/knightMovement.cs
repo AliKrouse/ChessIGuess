@@ -10,24 +10,49 @@ public class knightMovement : basePiece
 
     public override void SetMovement(int value)
     {
-        //base.SetMovement(value);
-
         if (value == 3)
             extraJump = true;
 
         movementValue = value;
 
-        if (dirs[direction].GetComponent<checkAvailability>().available)
+        if (dirs[direction].GetComponent<checkAvailability>().touchingEnemy && movementValue > 1)
+        {
+            // this code captures pieces like normal chess, which is boring
+
+            //targetTile = dirs[direction].GetComponent<checkAvailability>().NearestTile();
+            //Destroy(dirs[direction].GetComponent<checkAvailability>().enemyPiece.gameObject);
+            //movementValue = 1;
+
+            //if (GetComponent<Outline>() != null)
+            //    Destroy(GetComponent<Outline>());
+            //if (!tc.coroutineIsRunning)
+            //    tc.StartCoroutine(tc.SwitchTurns());
+
+            // THIS code captures pieces like dumb bad chess, which is fun as shit
+
+            cc.playerPiece = this;
+            cc.enemyPiece = dirs[direction].GetComponent<checkAvailability>().enemyPiece.GetComponent<basePiece>();
+            isClashing = true;
+            cc.EnterClash();
+            source.PlayOneShot(clashClip);
+        }
+        else
         {
             if (value > 2 || !extraJump)
             {
                 targetTile = dirs[direction].GetComponent<checkAvailability>().NearestTile();
                 movementValue--;
+                jumping = true;
+
+                if (value > 2)
+                    Debug.Log("making first of 2 jumps");
+                if (value > 1 && !extraJump)
+                    Debug.Log("making single jump");
             }
 
             if (value == 2 && extraJump)
             {
-                Debug.Log("jump 2");
+                Debug.Log("making second jump");
 
                 List<Transform> tileOptions = new List<Transform>();
                 for (int i = 0; i < dirs.Length; i++)
@@ -35,15 +60,15 @@ public class knightMovement : basePiece
                     if (dirs[i].GetComponent<checkAvailability>().available)
                     {
                         tileOptions.Add(dirs[i].GetComponent<checkAvailability>().NearestTile());
-                        Debug.DrawLine(transform.position, dirs[i].GetComponent<checkAvailability>().NearestTile().position, Color.red, 5);
                     }
                 }
 
                 int choice = Random.Range(0, tileOptions.Count);
                 targetTile = tileOptions[choice];
-                Debug.Log(targetTile);
+                Debug.Log("jumping to " + targetTile);
 
                 movementValue--;
+                jumping = true;
                 extraJump = false;
             }
 
@@ -51,26 +76,12 @@ public class knightMovement : basePiece
             {
                 if (GetComponent<Outline>() != null)
                     Destroy(GetComponent<Outline>());
-                //if (!tc.coroutineIsRunning)
-                //    tc.StartCoroutine(tc.SwitchTurns());
+                jumping = false;
                 if (!wc.hasCheckedForVictory)
                     wc.CheckForVictory();
 
                 extraJump = false;
             }
-        }
-        else
-        {
-            movementValue = 0;
-
-            if (GetComponent<Outline>() != null)
-                Destroy(GetComponent<Outline>());
-            //if (!tc.coroutineIsRunning)
-            //    tc.StartCoroutine(tc.SwitchTurns());
-            if (!wc.hasCheckedForVictory)
-                wc.CheckForVictory();
-
-            extraJump = false;
         }
     }
 }

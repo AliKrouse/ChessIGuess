@@ -30,7 +30,7 @@ public class basePiece : MonoBehaviour
 
     public bool isClashing;
 
-    private AudioSource source;
+    protected AudioSource source;
     public AudioClip pieceClip, clashClip;
 
     public bool jumping;

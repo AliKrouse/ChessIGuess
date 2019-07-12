@@ -58,15 +58,16 @@ public class dieRoller : MonoBehaviour
             if (Vector3.Distance(transform.position, inactivePoint) < float.Epsilon)
                 Destroy(d);
 
-            rollToCapture.gameObject.GetComponent<RectTransform>().localPosition = Vector3.MoveTowards(rollToCapture.gameObject.GetComponent<RectTransform>().localPosition, rtcInactive, Time.deltaTime * textSpeed);
-
             rolled = false;
         }
 
         if (rollingPlayer || rollingEnemy)
         {
-            //rollToCapture.gameObject.SetActive(true);
-            rollToCapture.gameObject.GetComponent<RectTransform>().localPosition = Vector3.MoveTowards(rollToCapture.gameObject.GetComponent<RectTransform>().localPosition, rtcActive, Time.deltaTime * textSpeed);
+            if (isActive)
+                rollToCapture.gameObject.GetComponent<RectTransform>().localPosition = Vector3.MoveTowards(rollToCapture.gameObject.GetComponent<RectTransform>().localPosition, rtcActive, Time.deltaTime * textSpeed);
+            else
+                rollToCapture.gameObject.GetComponent<RectTransform>().localPosition = Vector3.MoveTowards(rollToCapture.gameObject.GetComponent<RectTransform>().localPosition, rtcInactive, Time.deltaTime * textSpeed);
+
             rollToCapture.text = rollingColor + "\nRoll to capture!";
 
             if (rollingColor == "WHITE")
