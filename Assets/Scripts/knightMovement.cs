@@ -38,22 +38,15 @@ public class knightMovement : basePiece
         }
         else
         {
-            if (value > 2 || !extraJump)
+            if (value > 2 || !extraJump || (movementValue == 1 && extraJump))
             {
                 targetTile = dirs[direction].GetComponent<checkAvailability>().NearestTile();
                 movementValue--;
                 jumping = true;
-
-                if (value > 2)
-                    Debug.Log("making first of 2 jumps");
-                if (value > 1 && !extraJump)
-                    Debug.Log("making single jump");
             }
 
             if (value == 2 && extraJump)
             {
-                Debug.Log("making second jump");
-
                 List<Transform> tileOptions = new List<Transform>();
                 for (int i = 0; i < dirs.Length; i++)
                 {
@@ -65,7 +58,6 @@ public class knightMovement : basePiece
 
                 int choice = Random.Range(0, tileOptions.Count);
                 targetTile = tileOptions[choice];
-                Debug.Log("jumping to " + targetTile);
 
                 movementValue--;
                 jumping = true;

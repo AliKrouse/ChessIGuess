@@ -12,5 +12,10 @@ public class checkPawnCapture : checkAvailability
             available = false;
 
         arrow.SetActive(available);
+
+        if (!allyPiece)
+            touchingAlly = false;
+        if (!enemyPiece)
+            touchingEnemy = false;
     }
 }
